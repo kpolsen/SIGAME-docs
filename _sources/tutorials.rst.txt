@@ -1,0 +1,28 @@
+Tutorials
+=========
+... or how to:
+
+Plot SFR vs stellar mass
+------------------------
+
+.. code-block:: python
+
+   import sigame as si
+   si.plot.SFR_Mstar()
+
+
+Plot histogram of certain quantity
+----------------------------------
+The following commands allows the user to plot histograms 
+of several galaxies in one plot. 
+It will ask the user several questions to determine what to plot 
+and whether the histograms should be mass-weighted or plain numbers.
+
+.. code-block:: python
+
+   import sigame as si
+   si.plot.histos()
+
+Plot moment 0 map of a line
+---------------------------
+

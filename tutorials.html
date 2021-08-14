@@ -3,10 +3,11 @@
 <!DOCTYPE html>
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; SIGAME code documentation 3 documentation</title>
+  <title>Tutorials &mdash; SIGAME code documentation 3 documentation</title>
   
 
   
@@ -27,8 +28,9 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/theme.min.css" type="text/css" />
-    <link rel="index" title="Index" href="#" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="SÍGAME main module" href="sigame.html" /> 
 
 </head>
 
@@ -67,12 +69,14 @@
     
       <li><a href="index.html">Docs</a></li>
         
-      <li>Index</li>
+      <li>Tutorials</li>
     
     
       <li class="breadcrumbs-aside">
         
             
+            <a href="_sources/tutorials.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -100,7 +104,7 @@
                         
                             
                             
-                                <ul>
+                                <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sigame.html">SÍGAME module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="sigame.html#sigame-galaxy-submodule">sigame.galaxy submodule</a></li>
@@ -109,10 +113,10 @@
 <li class="toctree-l2"><a class="reference internal" href="sigame.html#sigame-param-submodule">sigame.param submodule</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorials.html#plot-sfr-vs-stellar-mass">Plot SFR vs stellar mass</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials.html#plot-histogram-of-certain-quantity">Plot histogram of certain quantity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials.html#plot-moment-0-map-of-a-line">Plot moment 0 map of a line</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#plot-sfr-vs-stellar-mass">Plot SFR vs stellar mass</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#plot-histogram-of-certain-quantity">Plot histogram of certain quantity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#plot-moment-0-map-of-a-line">Plot moment 0 map of a line</a></li>
 </ul>
 </li>
 </ul>
@@ -125,12 +129,31 @@
                     <div class="document">
                         
                             
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
+  <section id="tutorials">
+<h1>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h1>
+<p>… or how to:</p>
+<section id="plot-sfr-vs-stellar-mass">
+<h2>Plot SFR vs stellar mass<a class="headerlink" href="#plot-sfr-vs-stellar-mass" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sigame</span> <span class="k">as</span> <span class="nn">si</span>
+<span class="n">si</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">SFR_Mstar</span><span class="p">()</span>
+</pre></div>
 </div>
+</section>
+<section id="plot-histogram-of-certain-quantity">
+<h2>Plot histogram of certain quantity<a class="headerlink" href="#plot-histogram-of-certain-quantity" title="Permalink to this headline">¶</a></h2>
+<p>The following commands allows the user to plot histograms
+of several galaxies in one plot.
+It will ask the user several questions to determine what to plot
+and whether the histograms should be mass-weighted or plain numbers.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sigame</span> <span class="k">as</span> <span class="nn">si</span>
+<span class="n">si</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">histos</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="plot-moment-0-map-of-a-line">
+<h2>Plot moment 0 map of a line<a class="headerlink" href="#plot-moment-0-map-of-a-line" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
 
 
                         

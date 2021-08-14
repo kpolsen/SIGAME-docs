@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Welcome to SIGAME code documentation’s documentation! &mdash; SIGAME code documentation 3 documentation</title>
+  <title>Overview &mdash; SIGAME code documentation 3 documentation</title>
   
 
   
@@ -29,7 +29,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/theme.min.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="SÍGAME main module" href="sigame.html" /> 
 
 </head>
 
@@ -68,7 +69,7 @@
     
       <li><a href="#">Docs</a></li>
         
-      <li>Welcome to SIGAME code documentation’s documentation!</li>
+      <li>Overview</li>
     
     
       <li class="breadcrumbs-aside">
@@ -103,11 +104,23 @@
                         
                             
                             
-                                <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Welcome to SIGAME code documentation’s documentation!</a></li>
-<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+                                <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sigame.html">SÍGAME module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sigame.html#sigame-galaxy-submodule">sigame.galaxy submodule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sigame.html#sigame-global-results-submodule">sigame.global_results submodule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sigame.html#sigame-plot-submodule">sigame.plot submodule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sigame.html#sigame-param-submodule">sigame.param submodule</a></li>
 </ul>
-</div>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#plot-sfr-vs-stellar-mass">Plot SFR vs stellar mass</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#plot-histogram-of-certain-quantity">Plot histogram of certain quantity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#plot-moment-0-map-of-a-line">Plot moment 0 map of a line</a></li>
+</ul>
+</li>
+</ul>
+
                             
                         
                     </div>
@@ -116,18 +129,55 @@
                     <div class="document">
                         
                             
-  <section id="welcome-to-sigame-code-documentation-s-documentation">
-<h1>Welcome to SIGAME code documentation’s documentation!<a class="headerlink" href="#welcome-to-sigame-code-documentation-s-documentation" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
+  <div class="toctree-wrapper compound">
 </div>
+<section id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<section id="what-the-code-does">
+<h2>What the code does<a class="headerlink" href="#what-the-code-does" title="Permalink to this headline">¶</a></h2>
+<p>SÍGAME is a module written in python that can make synthetic observations of
+line emission in the far-infrared (FIR) of galaxies at any redshift.
+This site describes version 3 of the code, as presented in <a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2021arXiv210202868O/abstract">Olsen et al 2021</a>.
+Input to the code is: A table of particle data for a
+galaxy taken from a cosmological simulation snapshot.
+Output from the code is: A 3D datacube of line flux in spatial coordinates in kpc (x,y,z) as
+well as moment 0 maps along any of the three axes.
+By default, SÍGAME is set up to predict the following emission lines [CII]158, [NII] (122 and 205 microns),
+[OI] (63 microns), [OIII] (88 microns), CI (at 609 and 369 microns), CO(1-0), CO(2-1) and CO(3-2).</p>
+</section>
+<section id="an-example">
+<h2>An example<a class="headerlink" href="#an-example" title="Permalink to this headline">¶</a></h2>
+<p>Below is an example of what SÍGAME can do.
+A simulated galaxy at z=0 is processed with SÍGAME to produce maps in three different FIR emission lines;
+the rotational CO(1-0) line, the fine-structure [CII]158 micron and the [OIII]88 micron line.
+The input galaxy to SÍGAME in this case came from the 25 Mpc/h volume box of the Simba suite of cosmological simulations
+[<a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2019MNRAS.486.2827D/abstract">Davé et al 2019</a>].</p>
+<img alt="_images/moment0_maps.png" src="_images/moment0_maps.png" />
+<p>See also <a class="reference external" href="https://kpolsen.github.io/SIGAME/index.html">https://kpolsen.github.io/SIGAME/index.html</a> for a more general description.</p>
+</section>
+<section id="tributes">
+<h2>Tributes<a class="headerlink" href="#tributes" title="Permalink to this headline">¶</a></h2>
+<p>This version of SÍGAME makes use of the following software, publicly available elsewhere:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.nublado.org/">Cloudy v17</a></p></li>
+<li><p><a class="reference external" href="https://bitbucket.org/rthompson/caesar">caesar</a></p></li>
+<li><p><a class="reference external" href="https://skirt.ugent.be/version9/_version9.html">SKIRT v9</a></p></li>
+<li><p><a class="reference external" href="https://bpass.auckland.ac.nz/9.html">BPASS v221</a></p></li>
+</ul>
+</section>
+<section id="contact">
+<h2>Contact<a class="headerlink" href="#contact" title="Permalink to this headline">¶</a></h2>
+<p>For questions, contact Karen at:
+kpolsen at protonmail . com</p>
 </section>
 <section id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
 <li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
 </ul>
+</section>
 </section>
 
 
