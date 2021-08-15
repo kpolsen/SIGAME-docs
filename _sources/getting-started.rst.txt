@@ -73,4 +73,4 @@ Tutorials
 ---------
 To get started, the release versions of the code include 3 galaxies at z=0 taken from the cosmological simulation suite Simba. This means that you can run the code without actually having to find and supply galaxies from a simulation, but you can see exactly what the format should look like in order to add your own galaxies.
 
-The release versions also include 5 tutorials (Tutorial 0 - 4) that take you through the 4 steps of SÍGAME as described in Olsen et al. 2021 <https://ui.adsabs.harvard.edu/abs/2021arXiv210202868O/abstract>`_ using the included sample of 3 z=0 galaxies as a test. The tutorials are written in jupyter notebook and include plotting routines to check the results.
+The release versions also include 5 tutorials (Tutorial 0 - 4) that take you through the 4 steps of SÍGAME as described in `Olsen et al. 2021 <h ttps://ui.adsabs.harvard.edu/abs/2021arXiv210202868O/abstract>`_ using the included sample of 3 z=0 galaxies as a test. The tutorials are written in jupyter notebook and include plotting routines to check the results.

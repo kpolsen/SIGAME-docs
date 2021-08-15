@@ -44,7 +44,7 @@ The 4 steps of SÍGAME
 ---------------------
 SÍGAME contains 4 basic steps to calculate the line emission from a galaxy, all of which are summarized in the flow diagram below from `Olsen et al. 2021 <https://ui.adsabs.harvard.edu/abs/2021arXiv210202868O/abstract>`_:
 
-.. image:: flow.pdf
+.. image:: flow.png
 
 * Step 1 - Dust radiative transfer: The local radiation field strength is determined with the radiative transfer code SKIRT, which calculates the
 local dust-attenuated stellar spectrum. The SWIFTsimIO package is used to map gas properties from the cosmological simulation output to the cell structure from SKIRT. 
