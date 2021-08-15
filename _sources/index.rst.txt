@@ -9,11 +9,11 @@
 
    Overview <self>
    SÍGAME module <sigame>
-   Tutorials <tutorials>
+   Getting started <getting-started>
 
 
-Overview
-========
+SÍGAME: An overview
+===================
 
 What the code does
 ------------------
@@ -25,8 +25,9 @@ galaxy taken from a cosmological simulation snapshot.
 Output from the code is: A 3D datacube of line flux in spatial coordinates in kpc (x,y,z) as 
 well as moment 0 maps along any of the three axes. 
 By default, SÍGAME is set up to predict the following emission lines [CII]158, [NII] (122 and 205 microns), 
-[OI] (63 microns), [OIII] (88 microns), CI (at 609 and 369 microns), CO(1-0), CO(2-1) and CO(3-2).
+[OI] (63 microns), [OIII] (88 microns), [CI] (at 609 and 369 microns), CO(1-0), CO(2-1) and CO(3-2).
 
+See also https://kpolsen.github.io/SIGAME/index.html for a more general description.
 
 An example
 ----------
@@ -39,7 +40,19 @@ The input galaxy to SÍGAME in this case came from the 25 Mpc/h volume box of th
 
 .. image:: moment0_maps.png
 
-See also https://kpolsen.github.io/SIGAME/index.html for a more general description.
+The 4 steps of SÍGAME
+---------------------
+SÍGAME contains 4 basic steps to calculate the line emission from a galaxy, all of which are summarized in the flow diagram below from `Olsen et al. 2021 <https://ui.adsabs.harvard.edu/abs/2021arXiv210202868O/abstract>`_:
+
+.. image:: flow.pdf
+
+* Step 1 - Dust radiative transfer: The local radiation field strength is determined with the radiative transfer code SKIRT, which calculates the
+local dust-attenuated stellar spectrum. The SWIFTsimIO package is used to map gas properties from the cosmological simulation output to the cell structure from SKIRT. 
+* Step 2 - Additional attenuation by gas: The local interstellar radiation field is further attenuated with the use of a set of Cloudy models of different column densities, by matching the Cloudy transmitted spectrum in the OIR-to-FUV to the dust-attenuated spectrum of SKIRT for each gas cell.
+* Step 3 - Optional additional attenuation: To compensate for lack of resolution in typical cosmological simulations used, attenuation can be added on sub-grid scales with a simple function that can be modified by the user. By default, this function adds attenuation for Cloudy grid models with gas density > 100 cm^−3.
+* Step 4 - Deriving line emission: Finally, Line emission and chemical information are derived from an extensive grid of Cloudy 1-zone models, sampled according to the local density PDF to create a library for a range in values covering: gas density, SFR volume density, column density, FUV flux, metallicity and dust-to-metal ratio. 
+
+For step 2 and 3, a Cloudy grid of models is needed. With the `release versions <https://kpolsen.github.io/SIGAME-docs/getting-started.html>`_, come Cloudy grids for use at z=0, already calculated and stored in the necessary format. To set up and re-run these grids (for instance at a different redshift), see Tutorial 3 that comes with the relase versions. 
 
 Tributes
 --------
@@ -49,6 +62,7 @@ This version of SÍGAME makes use of the following software, publicly available 
 * `caesar <https://bitbucket.org/rthompson/caesar>`_
 * `SKIRT v9 <https://skirt.ugent.be/version9/_version9.html>`_
 * `BPASS v2.2.1 <https://bpass.auckland.ac.nz/9.html>`_
+* `SWIFTsimIO <https://github.com/SWIFTSIM/swiftsimio>`_
 
 Contact
 -------

@@ -1,5 +1,5 @@
-SÍGAME main module
-==================
+SÍGAME: The main module
+=======================
 
 The SÍGAME package features a folder that is imported in python as the main module and 
 contains a number of submodules. The most important submodules are listed below with 

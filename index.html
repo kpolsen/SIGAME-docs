@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Overview &mdash; SIGAME code documentation 3 documentation</title>
+  <title>SÍGAME: An overview &mdash; SIGAME code documentation 3 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="_static/css/theme.min.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="SÍGAME main module" href="sigame.html" /> 
+    <link rel="next" title="SÍGAME: The main module" href="sigame.html" /> 
 
 </head>
 
@@ -69,7 +69,7 @@
     
       <li><a href="#">Docs</a></li>
         
-      <li>Overview</li>
+      <li>SÍGAME: An overview</li>
     
     
       <li class="breadcrumbs-aside">
@@ -113,10 +113,11 @@
 <li class="toctree-l2"><a class="reference internal" href="sigame.html#module-sigame.param">sigame.param submodule</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorials.html#plot-sfr-vs-stellar-mass">Plot SFR vs stellar mass</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials.html#plot-histogram-of-certain-quantity">Plot histogram of certain quantity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials.html#plot-moment-0-map-of-a-line">Plot moment 0 map of a line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#quickstart">Quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#the-almighty-parameter-file">The almighty parameter file!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#running-sigame">Running SÍGAME</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#tutorials">Tutorials</a></li>
 </ul>
 </li>
 </ul>
@@ -131,8 +132,8 @@
                             
   <div class="toctree-wrapper compound">
 </div>
-<section id="overview">
-<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<section id="sigame-an-overview">
+<h1>SÍGAME: An overview<a class="headerlink" href="#sigame-an-overview" title="Permalink to this headline">¶</a></h1>
 <section id="what-the-code-does">
 <h2>What the code does<a class="headerlink" href="#what-the-code-does" title="Permalink to this headline">¶</a></h2>
 <p>SÍGAME is a module written in python that can make synthetic observations of
@@ -143,7 +144,8 @@ galaxy taken from a cosmological simulation snapshot.
 Output from the code is: A 3D datacube of line flux in spatial coordinates in kpc (x,y,z) as
 well as moment 0 maps along any of the three axes.
 By default, SÍGAME is set up to predict the following emission lines [CII]158, [NII] (122 and 205 microns),
-[OI] (63 microns), [OIII] (88 microns), CI (at 609 and 369 microns), CO(1-0), CO(2-1) and CO(3-2).</p>
+[OI] (63 microns), [OIII] (88 microns), [CI] (at 609 and 369 microns), CO(1-0), CO(2-1) and CO(3-2).</p>
+<p>See also <a class="reference external" href="https://kpolsen.github.io/SIGAME/index.html">https://kpolsen.github.io/SIGAME/index.html</a> for a more general description.</p>
 </section>
 <section id="an-example">
 <h2>An example<a class="headerlink" href="#an-example" title="Permalink to this headline">¶</a></h2>
@@ -153,7 +155,19 @@ the rotational CO(1-0) line, the fine-structure [CII]158 micron and the [OIII]88
 The input galaxy to SÍGAME in this case came from the 25 Mpc/h volume box of the Simba suite of cosmological simulations
 [<a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2019MNRAS.486.2827D/abstract">Davé et al. 2019</a>].</p>
 <img alt="_images/moment0_maps.png" src="_images/moment0_maps.png" />
-<p>See also <a class="reference external" href="https://kpolsen.github.io/SIGAME/index.html">https://kpolsen.github.io/SIGAME/index.html</a> for a more general description.</p>
+</section>
+<section id="the-4-steps-of-sigame">
+<h2>The 4 steps of SÍGAME<a class="headerlink" href="#the-4-steps-of-sigame" title="Permalink to this headline">¶</a></h2>
+<p>SÍGAME contains 4 basic steps to calculate the line emission from a galaxy, all of which are summarized in the flow diagram below from <a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2021arXiv210202868O/abstract">Olsen et al. 2021</a>:</p>
+<img alt="_images/flow.pdf" src="_images/flow.pdf" />
+<ul class="simple">
+<li><p>Step 1 - Dust radiative transfer: The local radiation field strength is determined with the radiative transfer code SKIRT, which calculates the</p></li>
+</ul>
+<p>local dust-attenuated stellar spectrum. The SWIFTsimIO package is used to map gas properties from the cosmological simulation output to the cell structure from SKIRT.
+* Step 2 - Additional attenuation by gas: The local interstellar radiation field is further attenuated with the use of a set of Cloudy models of different column densities, by matching the Cloudy transmitted spectrum in the OIR-to-FUV to the dust-attenuated spectrum of SKIRT for each gas cell.
+* Step 3 - Optional additional attenuation: To compensate for lack of resolution in typical cosmological simulations used, attenuation can be added on sub-grid scales with a simple function that can be modified by the user. By default, this function adds attenuation for Cloudy grid models with gas density &gt; 100 cm^−3.
+* Step 4 - Deriving line emission: Finally, Line emission and chemical information are derived from an extensive grid of Cloudy 1-zone models, sampled according to the local density PDF to create a library for a range in values covering: gas density, SFR volume density, column density, FUV flux, metallicity and dust-to-metal ratio.</p>
+<p>For step 2 and 3, a Cloudy grid of models is needed. With the <a class="reference external" href="https://kpolsen.github.io/SIGAME-docs/getting-started.html">release versions</a>, come Cloudy grids for use at z=0, already calculated and stored in the necessary format. To set up and re-run these grids (for instance at a different redshift), see Tutorial 3 that comes with the relase versions.</p>
 </section>
 <section id="tributes">
 <h2>Tributes<a class="headerlink" href="#tributes" title="Permalink to this headline">¶</a></h2>
@@ -163,6 +177,7 @@ The input galaxy to SÍGAME in this case came from the 25 Mpc/h volume box of th
 <li><p><a class="reference external" href="https://bitbucket.org/rthompson/caesar">caesar</a></p></li>
 <li><p><a class="reference external" href="https://skirt.ugent.be/version9/_version9.html">SKIRT v9</a></p></li>
 <li><p><a class="reference external" href="https://bpass.auckland.ac.nz/9.html">BPASS v2.2.1</a></p></li>
+<li><p><a class="reference external" href="https://github.com/SWIFTSIM/swiftsimio">SWIFTsimIO</a></p></li>
 </ul>
 </section>
 <section id="contact">

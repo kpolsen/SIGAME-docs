@@ -1,0 +1,235 @@
+
+
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SÍGAME: Getting started &mdash; SIGAME code documentation 3 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.min.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.min.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="SÍGAME: The main module" href="sigame.html" /> 
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a class="site-nav-toggle hidden-lg-up"><i class="icon-menu"></i></a>
+            <a class="site-title" href="index.html">
+                SIGAME code documentation
+            </a>
+        </div>
+    </header>
+
+
+<div class="breadcrumbs-outer hidden-xs-down">
+    <div class="container">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="breadcrumbs">
+    
+      <li><a href="index.html">Docs</a></li>
+        
+      <li>SÍGAME: Getting started</li>
+    
+    
+      <li class="breadcrumbs-aside">
+        
+            
+            <a href="_sources/getting-started.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+</div>
+    </div>
+</div>
+    <div class="main-outer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-3 site-nav">
+                    
+<div role="search">
+    <form class="search" action="search.html" method="get">
+        <div class="icon-input">
+            <input type="text" name="q" placeholder="Search" />
+            <span class="icon-search"></span>
+        </div>
+        <input type="submit" value="Go" class="d-hidden" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+                    <div class="site-nav-tree">
+                        
+                            
+                            
+                                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sigame.html">SÍGAME module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sigame.html#sigame-galaxy-submodule">sigame.galaxy submodule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sigame.html#sigame-global-results-submodule">sigame.global_results submodule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sigame.html#sigame-plot-submodule">sigame.plot submodule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sigame.html#module-sigame.param">sigame.param submodule</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#quickstart">Quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-almighty-parameter-file">The almighty parameter file!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-sigame">Running SÍGAME</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tutorials">Tutorials</a></li>
+</ul>
+</li>
+</ul>
+
+                            
+                        
+                    </div>
+                </div>
+                <div class="col-12 col-lg-9">
+                    <div class="document">
+                        
+                            
+  <section id="sigame-getting-started">
+<h1>SÍGAME: Getting started<a class="headerlink" href="#sigame-getting-started" title="Permalink to this headline">¶</a></h1>
+<section id="quickstart">
+<h2>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h2>
+<p>Start by finding and downloading the latest release of the code as a compressed folder here: <a class="reference external" href="https://github.com/kpolsen/SIGAME/releases">https://github.com/kpolsen/SIGAME/releases</a></p>
+<p>After extracting the files into a folder, try importing the sigame module from that folder in python:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sigame</span> <span class="k">as</span> <span class="nn">si</span>
+</pre></div>
+</div>
+<p>If all goes well, the following output should be printed:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     =======================================================
+
+     .oOOOo.  ooOoOOo  .oOOOo.     Oo    Oo      oO o.OOoOoo
+     o     o     O    .O     o    o  O   O O    o o  O
+     O.          o    o          O    o  o  o  O  O  o
+      `OOoo.     O    O         oOooOoOo O   Oo   O  ooOO
+           `O    o    O   .oOOo o      O O        o  O
+            o    O    o.      O O      o o        O  o
+     O.    .O    O     O.    oO o      O o        O  O
+      `oooO&#39;  ooOOoOo   `OooO&#39;  O.     O O        o ooOooOoO
+
+     =======================================================
+      SImulator of GAlaxy Millimeter/submillimeter Emission
+---- A code to simulate the far-IR emission lines of the ISM  ----
+------------- in galaxies from hydrodynamical codes --------------
+----- for the interpretation and prediction of observations. -----
+---- Contact: Karen Olsen, kpolsen (at) protonmail.com (2021) ----
+</pre></div>
+</div>
+<p>If the print out ends with <cite>Ready to continue!</cite>, you’re good to go! If not, check first if SÍGAME is complaining about a missing module and install that with e.g. pip or conda. Also make sure your python version is close to that mentioned on the release page.</p>
+</section>
+<section id="the-almighty-parameter-file">
+<h2>The almighty parameter file!<a class="headerlink" href="#the-almighty-parameter-file" title="Permalink to this headline">¶</a></h2>
+<p>SÍGAME consists of several steps that can be executed separately. The selection of steps to be executed is determined by the parameter file <cite>parameters.txt</cite>. At the bottom of this file, you should see the following lines:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">BACKEND</span> <span class="n">TASKS</span>
+<span class="o">-</span><span class="mi">1</span> <span class="n">step1_setup_SKIRT</span>
+<span class="o">-</span><span class="mi">1</span> <span class="n">step1_read_SKIRT</span>
+<span class="o">-</span><span class="mi">1</span> <span class="n">step2_grid_gas</span>
+<span class="o">-</span><span class="mi">1</span> <span class="n">step3_mk_frag_table</span>
+<span class="o">-</span><span class="mi">1</span> <span class="n">step3_setup_Cloudy_grid</span>
+<span class="o">-</span><span class="mi">1</span> <span class="n">step3_run_Cloudy</span>
+<span class="o">-</span><span class="mi">1</span> <span class="n">step3_combine_Cloudy</span>
+<span class="o">-</span><span class="mi">1</span> <span class="n">step3_complete_Cloudy</span>
+<span class="o">-</span><span class="mi">1</span> <span class="n">step3_read_Cloudy_grid</span>
+<span class="o">-</span><span class="mi">1</span> <span class="n">step3_make_Cloudy_table</span>
+<span class="o">-</span><span class="mi">1</span> <span class="n">step4_interpolate</span>
+<span class="o">-</span><span class="mi">1</span> <span class="n">step4_derived_results</span>
+</pre></div>
+</div>
+<p>Here, a <cite>-1</cite> means that the step will be skipped whereas a <cite>+1</cite> means that the step will be performed when running the sigame module. Most of these steps depend on the output from the previous step and must therefore be executed in order the first time, but after that, you can re-run specific steps in any order.</p>
+</section>
+<section id="running-sigame">
+<h2>Running SÍGAME<a class="headerlink" href="#running-sigame" title="Permalink to this headline">¶</a></h2>
+<p>Once you have edited the <cite>parameters.txt</cite>, it’s time to run the code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sigame</span> <span class="k">as</span> <span class="nn">si</span>
+<span class="n">si</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<p>To get started, the release versions of the code include 3 galaxies at z=0 taken from the cosmological simulation suite Simba. This means that you can run the code without actually having to find and supply galaxies from a simulation, but you can see exactly what the format should look like in order to add your own galaxies.</p>
+<p>The release versions also include 5 tutorials (Tutorial 0 - 4) that take you through the 4 steps of SÍGAME as described in Olsen et al. 2021 &lt;<a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2021arXiv210202868O/abstract">https://ui.adsabs.harvard.edu/abs/2021arXiv210202868O/abstract</a>&gt;`_ using the included sample of 3 z=0 galaxies as a test. The tutorials are written in jupyter notebook and include plotting routines to check the results.</p>
+</section>
+</section>
+
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+    <div class="footer" role="contentinfo">
+        <div class="container">
+            &#169; Copyright 2021, Karen Pardos Olsen.
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.1.
+        </div>
+    </div>  
+
+</body>
+</html>

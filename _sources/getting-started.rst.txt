@@ -1,0 +1,76 @@
+SÍGAME: Getting started
+======================
+
+Quickstart
+----------
+
+Start by finding and downloading the latest release of the code as a compressed folder here: https://github.com/kpolsen/SIGAME/releases
+
+After extracting the files into a folder, try importing the sigame module from that folder in python:
+
+.. code-block:: python
+
+   import sigame as si
+
+If all goes well, the following output should be printed:
+
+.. code-block:: none
+
+        =======================================================
+
+        .oOOOo.  ooOoOOo  .oOOOo.     Oo    Oo      oO o.OOoOoo
+        o     o     O    .O     o    o  O   O O    o o  O
+        O.          o    o          O    o  o  o  O  O  o
+         `OOoo.     O    O         oOooOoOo O   Oo   O  ooOO
+              `O    o    O   .oOOo o      O O        o  O
+               o    O    o.      O O      o o        O  o
+        O.    .O    O     O.    oO o      O o        O  O
+         `oooO'  ooOOoOo   `OooO'  O.     O O        o ooOooOoO
+
+        =======================================================
+         SImulator of GAlaxy Millimeter/submillimeter Emission
+   ---- A code to simulate the far-IR emission lines of the ISM  ----
+   ------------- in galaxies from hydrodynamical codes --------------
+   ----- for the interpretation and prediction of observations. -----
+   ---- Contact: Karen Olsen, kpolsen (at) protonmail.com (2021) ----
+
+If the print out ends with `Ready to continue!`, you're good to go! If not, check first if SÍGAME is complaining about a missing module and install that with e.g. pip or conda. Also make sure your python version is close to that mentioned on the release page.
+
+
+The almighty parameter file!
+----------------------------
+SÍGAME consists of several steps that can be executed separately. The selection of steps to be executed is determined by the parameter file `parameters.txt`. At the bottom of this file, you should see the following lines:
+
+.. code-block:: python
+
+   BACKEND TASKS
+   -1 step1_setup_SKIRT
+   -1 step1_read_SKIRT
+   -1 step2_grid_gas
+   -1 step3_mk_frag_table
+   -1 step3_setup_Cloudy_grid
+   -1 step3_run_Cloudy
+   -1 step3_combine_Cloudy
+   -1 step3_complete_Cloudy
+   -1 step3_read_Cloudy_grid
+   -1 step3_make_Cloudy_table
+   -1 step4_interpolate
+   -1 step4_derived_results
+
+
+Here, a `-1` means that the step will be skipped whereas a `+1` means that the step will be performed when running the sigame module. Most of these steps depend on the output from the previous step and must therefore be executed in order the first time, but after that, you can re-run specific steps in any order.
+
+Running SÍGAME
+--------------
+Once you have edited the `parameters.txt`, it's time to run the code:
+
+.. code-block:: python
+
+   import sigame as si
+   si.run()
+
+Tutorials
+---------
+To get started, the release versions of the code include 3 galaxies at z=0 taken from the cosmological simulation suite Simba. This means that you can run the code without actually having to find and supply galaxies from a simulation, but you can see exactly what the format should look like in order to add your own galaxies.
+
+The release versions also include 5 tutorials (Tutorial 0 - 4) that take you through the 4 steps of SÍGAME as described in Olsen et al. 2021 <https://ui.adsabs.harvard.edu/abs/2021arXiv210202868O/abstract>`_ using the included sample of 3 z=0 galaxies as a test. The tutorials are written in jupyter notebook and include plotting routines to check the results.
