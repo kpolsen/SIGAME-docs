@@ -46,8 +46,7 @@ SÍGAME contains 4 basic steps to calculate the line emission from a galaxy, all
 
 .. image:: flow.png
 
-* Step 1 - Dust radiative transfer: The local radiation field strength is determined with the radiative transfer code SKIRT, which calculates the
-local dust-attenuated stellar spectrum. The SWIFTsimIO package is used to map gas properties from the cosmological simulation output to the cell structure from SKIRT. 
+* Step 1 - Dust radiative transfer: The local radiation field strength is determined with the radiative transfer code SKIRT, which calculates the local dust-attenuated stellar spectrum. The SWIFTsimIO package is used to map gas properties from the cosmological simulation output to the cell structure from SKIRT. 
 * Step 2 - Additional attenuation by gas: The local interstellar radiation field is further attenuated with the use of a set of Cloudy models of different column densities, by matching the Cloudy transmitted spectrum in the OIR-to-FUV to the dust-attenuated spectrum of SKIRT for each gas cell.
 * Step 3 - Optional additional attenuation: To compensate for lack of resolution in typical cosmological simulations used, attenuation can be added on sub-grid scales with a simple function that can be modified by the user. By default, this function adds attenuation for Cloudy grid models with gas density > 100 cm^−3.
 * Step 4 - Deriving line emission: Finally, Line emission and chemical information are derived from an extensive grid of Cloudy 1-zone models, sampled according to the local density PDF to create a library for a range in values covering: gas density, SFR volume density, column density, FUV flux, metallicity and dust-to-metal ratio. 
