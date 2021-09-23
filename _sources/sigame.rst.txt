@@ -13,9 +13,7 @@ sigame.galaxy submodule
     :members:
     :private-members:
     :undoc-members:
-
-.. autoclass:: sigame.galaxy.galaxy
-    :members:
+    
 
 sigame.global\_results submodule
 --------------------------------
