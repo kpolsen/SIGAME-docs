@@ -150,21 +150,22 @@ and carry out all tasks related to galaxies.</p>
 <dt class="sig sig-object py" id="sigame.galaxy.cell_data">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sigame.galaxy.</span></span><span class="sig-name descname"><span class="pre">cell_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gal_ob</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.cell_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>An object referring to the cell data (from SKIRT “AMR” output)</p>
+<p>An object referring to the cell data of one galaxy</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Must be added as an attribute to a galaxy object.</p>
+<p>Is an attribute to a galaxy object.</p>
 </div>
-<dl class="simple">
-<dt>gal_ob<span class="classifier">object</span></dt><dd><p>Instance of galaxy class.</p>
-</dd>
-<dt>silent<span class="classifier">bool</span></dt><dd><p>Parameter telling the code to do (or not) print statements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gal_ob</strong> (<em>object</em>) – Instance of galaxy class</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Parameter telling the code to do (or not) print statements.</p></li>
+</ul>
 </dd>
 </dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">galaxy</span> <span class="k">as</span> <span class="nn">gal</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">gal_ob</span> <span class="o">=</span> <span class="n">gal</span><span class="o">.</span><span class="n">galaxy</span><span class="p">(</span><span class="n">gal_index</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">gal_ob</span><span class="o">.</span><span class="n">cell_data</span><span class="o">.</span><span class="n">start_dataframe</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">cell_data</span> <span class="o">=</span> <span class="n">gal_ob</span><span class="o">.</span><span class="n">cell_data</span><span class="o">.</span><span class="n">get_dataframe</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gal_ob</span>       <span class="o">=</span>   <span class="n">gal</span><span class="o">.</span><span class="n">galaxy</span><span class="p">(</span><span class="n">gal_index</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cell_data</span>    <span class="o">=</span>   <span class="n">gal_ob</span><span class="o">.</span><span class="n">cell_data</span><span class="o">.</span><span class="n">get_dataframe</span><span class="p">()</span>
 </pre></div>
 </div>
 <dl class="py method">
