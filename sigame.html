@@ -110,8 +110,12 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">SÍGAME module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#module-sigame.galaxy">sigame.galaxy submodule</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-sigame.global_results">sigame.global_results submodule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sigame-cloudy-modeling-submodule">sigame.Cloudy_modeling submodule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-sigame.main">sigame.main submodule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sigame-backend-submodule">sigame.backend submodule</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-sigame.plot">sigame.plot submodule</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-sigame.param">sigame.param submodule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-sigame.auxil">sigame.auxil submodule</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a><ul>
@@ -149,8 +153,7 @@ and carry out all tasks related to galaxies.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="sigame.galaxy.cell_data">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sigame.galaxy.</span></span><span class="sig-name descname"><span class="pre">cell_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gal_ob</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.cell_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>An object referring to the cell data of one galaxy</p>
+<dd><p>An object referring to the cell data of one galaxy</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Is an attribute to a galaxy object.</p>
@@ -159,7 +162,7 @@ and carry out all tasks related to galaxies.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>gal_ob</strong> (<em>object</em>) – Instance of galaxy class</p></li>
-<li><p><strong>verbose</strong> (<em>bool</em>) – Parameter telling the code to do (or not) print statements.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Print a lot of info (True) or less (False) during run time of the code</p></li>
 </ul>
 </dd>
 </dl>
@@ -169,27 +172,113 @@ and carry out all tasks related to galaxies.</p>
 </pre></div>
 </div>
 <dl class="py method">
+<dt class="sig sig-object py" id="sigame.galaxy.cell_data._add_DTM">
+<span class="sig-name descname"><span class="pre">_add_DTM</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.cell_data._add_DTM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates dust-to-metal ratio per cell from nearby fluid elements.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.galaxy.cell_data._add_FIR_flux">
+<span class="sig-name descname"><span class="pre">_add_FIR_flux</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fluxOutputStyle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Wavelength'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.cell_data._add_FIR_flux" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates FIR flux in each cell from SKIRT radiation field probe.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>fluxOutputStyle</strong> (<em>str</em><em>, </em><em>optional</em>) – Units of flux in each cell, defaults to “Wavelength” corresponding to (W/m2/micron)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.galaxy.cell_data._add_FUV_flux">
+<span class="sig-name descname"><span class="pre">_add_FUV_flux</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fluxOutputStyle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Wavelength'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.cell_data._add_FUV_flux" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates FUV flux in each cell from SKIRT radiation field probe.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>fluxOutputStyle</strong> (<em>str</em><em>, </em><em>optional</em>) – Units of flux in each cell, defaults to “Wavelength” corresponding to (W/m2/micron)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.galaxy.cell_data._add_SFR_density">
+<span class="sig-name descname"><span class="pre">_add_SFR_density</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.cell_data._add_SFR_density" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates SFR density per cell from nearby fluid elements.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.galaxy.cell_data._add_data">
+<span class="sig-name descname"><span class="pre">_add_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.cell_data._add_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds cell data as dataframe attribute to cell_data object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.galaxy.cell_data._add_metallicity">
+<span class="sig-name descname"><span class="pre">_add_metallicity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.cell_data._add_metallicity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates metallicity per cell from nearby fluid elements.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.galaxy.cell_data._add_nH">
+<span class="sig-name descname"><span class="pre">_add_nH</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.cell_data._add_nH" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates hydrogen density per cell from nearby fluid elements.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.galaxy.cell_data._add_velocity">
+<span class="sig-name descname"><span class="pre">_add_velocity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.cell_data._add_velocity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates velocity (vx,vy,xz) per cell from nearby fluid elements.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.galaxy.cell_data._do_interpolation_cells">
+<span class="sig-name descname"><span class="pre">_do_interpolation_cells</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.cell_data._do_interpolation_cells" title="Permalink to this definition">¶</a></dt>
+<dd><p>Interpolates in Cloudy look-up table for all cells in a galaxy.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.galaxy.cell_data._get_name">
+<span class="sig-name descname"><span class="pre">_get_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.cell_data._get_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates/gets file name where cell data of one galaxy is stored.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.galaxy.cell_data._interpolate_cloudy_cell_table">
+<span class="sig-name descname"><span class="pre">_interpolate_cloudy_cell_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lookup_table</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cell_prop</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.cell_data._interpolate_cloudy_cell_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Interpolates in Cloudy look-up table for all cells in a galaxy.
+Called by self._do_interpolation_cells().</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.galaxy.cell_data._read_cellprops">
+<span class="sig-name descname"><span class="pre">_read_cellprops</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.cell_data._read_cellprops" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads cell properties from SKIRT and store in dataframe.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="sigame.galaxy.cell_data.get_dataframe">
 <span class="sig-name descname"><span class="pre">get_dataframe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.cell_data.get_dataframe" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Adds cell data as dataframe attribute to cell_data object and returns dataframe..</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.galaxy.cell_data.save_dataframe">
 <span class="sig-name descname"><span class="pre">save_dataframe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.cell_data.save_dataframe" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Saves cell data of one galaxy to file.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.galaxy.cell_data.start_dataframe">
 <span class="sig-name descname"><span class="pre">start_dataframe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.cell_data.start_dataframe" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Creates a dataframe with cell data from SKIRT output for one galaxy.
+Called by isrf.read_skirt_output().</p>
+</dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sigame.galaxy.galaxy">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sigame.galaxy.</span></span><span class="sig-name descname"><span class="pre">galaxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gal_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">GR</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.galaxy" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>An object referring to one particular galaxy.</p>
+<dd><p>An object referring to one particular galaxy.</p>
 <dl class="simple">
 <dt>gal_index: int</dt><dd><p>Galaxy index, default: 0</p>
 </dd>
@@ -209,8 +298,7 @@ and carry out all tasks related to galaxies.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="sigame.galaxy.grid">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sigame.galaxy.</span></span><span class="sig-name descname"><span class="pre">grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gal_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">GR</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.grid" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#id0" title="sigame.galaxy.galaxy"><code class="xref py py-class docutils literal notranslate"><span class="pre">sigame.galaxy.galaxy</span></code></a></p>
-<p>An object that will derive and store the cell information for one galaxy.
+<dd><p>An object that will derive and store the cell information for one galaxy.
 Child class that inherits from parent class ‘galaxy’.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.galaxy.grid.run">
@@ -229,8 +317,7 @@ Child class that inherits from parent class ‘galaxy’.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="sigame.galaxy.interpolation">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sigame.galaxy.</span></span><span class="sig-name descname"><span class="pre">interpolation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gal_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">GR</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.interpolation" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#id0" title="sigame.galaxy.galaxy"><code class="xref py py-class docutils literal notranslate"><span class="pre">sigame.galaxy.galaxy</span></code></a></p>
-<p>An object that will interpolate in cloudy look-up tables for the line luminosities.
+<dd><p>An object that will interpolate in cloudy look-up tables for the line luminosities.
 Child class that inherits from parent class ‘galaxy’.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.galaxy.interpolation.run_cells">
@@ -248,9 +335,82 @@ Child class that inherits from parent class ‘galaxy’.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="sigame.galaxy.isrf">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sigame.galaxy.</span></span><span class="sig-name descname"><span class="pre">isrf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gal_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">GR</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.isrf" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#id0" title="sigame.galaxy.galaxy"><code class="xref py py-class docutils literal notranslate"><span class="pre">sigame.galaxy.galaxy</span></code></a></p>
-<p>An object that will derive and store the ISRF information for one galaxy.
+<dd><p>An object that will derive and store the ISRF information for one galaxy.
 Child class that inherits from parent class ‘galaxy’.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.galaxy.isrf._add_FIR_lum">
+<span class="sig-name descname"><span class="pre">_add_FIR_lum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.isrf._add_FIR_lum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate emitted total FIR (3-1100 microns) luminosity from SKIRT output files (SED instrument).
+FIR as defined in Kennicutt and Evans 2012 table 1:</p>
+<blockquote>
+<div><p><a class="reference external" href="https://www.annualreviews.org/doi/abs/10.1146/annurev-astro-081811-125610">https://www.annualreviews.org/doi/abs/10.1146/annurev-astro-081811-125610</a></p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.galaxy.isrf._add_FUV_lum">
+<span class="sig-name descname"><span class="pre">_add_FUV_lum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.isrf._add_FUV_lum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate emitted FUV luminosity from SKIRT output files (SED instrument).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.galaxy.isrf._add_TIR_lum">
+<span class="sig-name descname"><span class="pre">_add_TIR_lum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.isrf._add_TIR_lum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate emitted total TIR (3-1100 microns) luminosity from SKIRT output files (SED instrument).
+TIR as defined in Kennicutt and Evans 2012 table 1:</p>
+<blockquote>
+<div><p><a class="reference external" href="https://www.annualreviews.org/doi/abs/10.1146/annurev-astro-081811-125610">https://www.annualreviews.org/doi/abs/10.1146/annurev-astro-081811-125610</a></p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.galaxy.isrf._add_bol_lum">
+<span class="sig-name descname"><span class="pre">_add_bol_lum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.isrf._add_bol_lum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate emitted bolometric luminosity from SKIRT output files (SED instrument).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.galaxy.isrf._get_cut_probe">
+<span class="sig-name descname"><span class="pre">_get_cut_probe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.isrf._get_cut_probe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get cross section data of radiation field from SKIRT.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.galaxy.isrf._get_map_inst">
+<span class="sig-name descname"><span class="pre">_get_map_inst</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.isrf._get_map_inst" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get projected map of radiation field from SKIRT.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.galaxy.isrf._get_name">
+<span class="sig-name descname"><span class="pre">_get_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.isrf._get_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get galaxy identifier used when running SKIRT</p>
+<dl class="simple">
+<dt>method<span class="classifier">str</span></dt><dd><p>Optional string to identify specific SKIRT runs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.galaxy.isrf._read_SED">
+<span class="sig-name descname"><span class="pre">_read_SED</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fluxOutputStyle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Wavelength'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">select</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.isrf._read_SED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read SED output from SKIRT.</p>
+<dl class="simple">
+<dt>fluxOutputStyle: str</dt><dd><p>Units for flux, default is “Wavelength”: Units are F_mu (W/m2/micron)
+Alternatively, “Neutral”: Units are lambda*F_lambda (W/m2)
+Alternatively, “Frequency”: Units are F_lambda (W/m2/Hz)</p>
+</dd>
+<dt>select: str</dt><dd><p>Optional string to identify specific SKIRT runs, for instance with increased photon package number.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.galaxy.isrf._set_distance_to_galaxy">
+<span class="sig-name descname"><span class="pre">_set_distance_to_galaxy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.isrf._set_distance_to_galaxy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set distance to galaxy in Mpc (defaults to 10 Mpc for z = 0).</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.galaxy.isrf.check_for_skirt_output">
 <span class="sig-name descname"><span class="pre">check_for_skirt_output</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.isrf.check_for_skirt_output" title="Permalink to this definition">¶</a></dt>
@@ -274,8 +434,7 @@ Child class that inherits from parent class ‘galaxy’.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="sigame.galaxy.particle_data">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sigame.galaxy.</span></span><span class="sig-name descname"><span class="pre">particle_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gal_ob</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.particle_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>An object referring to the particle data (sim or ISM)</p>
+<dd><p>An object referring to the particle data (sim or ISM)</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Must be added as an attribute to a galaxy object.</p>
@@ -291,6 +450,12 @@ Child class that inherits from parent class ‘galaxy’.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">simgas</span> <span class="o">=</span> <span class="n">gal_ob</span><span class="o">.</span><span class="n">particle_data</span><span class="o">.</span><span class="n">get_dataframe</span><span class="p">(</span><span class="s1">&#39;sim&#39;</span><span class="p">)[</span><span class="s1">&#39;gas&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.galaxy.particle_data._add_data">
+<span class="sig-name descname"><span class="pre">_add_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.particle_data._add_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add particle data as dataframe (“df” attribute) to particle_data object.</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.galaxy.particle_data.get_dataframe">
 <span class="sig-name descname"><span class="pre">get_dataframe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.particle_data.get_dataframe" title="Permalink to this definition">¶</a></dt>
@@ -365,6 +530,31 @@ line luminosity and other properties, using interpolation class.</p>
 </pre></div>
 </div>
 <dl class="py method">
+<dt class="sig sig-object py" id="sigame.global_results.global_results.__create_selection_from_enzo">
+<span class="sig-name descname"><span class="pre">__create_selection_from_enzo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.global_results.global_results.__create_selection_from_enzo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.global_results.global_results.__create_selection_from_simba">
+<span class="sig-name descname"><span class="pre">__create_selection_from_simba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.global_results.global_results.__create_selection_from_simba" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.global_results.global_results.__get_file_location">
+<span class="sig-name descname"><span class="pre">__get_file_location</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.global_results.global_results.__get_file_location" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.global_results.global_results.__set_attr">
+<span class="sig-name descname"><span class="pre">__set_attr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">GR_int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.global_results.global_results.__set_attr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.global_results.global_results._get_file">
+<span class="sig-name descname"><span class="pre">_get_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.global_results.global_results._get_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="sigame.global_results.global_results.add_column">
 <span class="sig-name descname"><span class="pre">add_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.global_results.global_results.add_column" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -414,6 +604,212 @@ line luminosity and other properties, using interpolation class.</p>
 <span class="sig-name descname"><span class="pre">save_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">GR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.global_results.global_results.save_results" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+</dd></dl>
+
+</section>
+<section id="sigame-cloudy-modeling-submodule">
+<h2>sigame.Cloudy_modeling submodule<a class="headerlink" href="#sigame-cloudy-modeling-submodule" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-sigame.Cloudy_modeling"></span><p>Module with classes to set up the Cloudy model library with input files and 
+scripts to read the output.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.Cloudy_modeling.get_dust_mass">
+<span class="sig-prename descclassname"><span class="pre">sigame.Cloudy_modeling.</span></span><span class="sig-name descname"><span class="pre">get_dust_mass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">out_file_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.Cloudy_modeling.get_dust_mass" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.Cloudy_modeling.get_metal_mass">
+<span class="sig-prename descclassname"><span class="pre">sigame.Cloudy_modeling.</span></span><span class="sig-name descname"><span class="pre">get_metal_mass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">out_file_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.Cloudy_modeling.get_metal_mass" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sigame.Cloudy_modeling.library">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sigame.Cloudy_modeling.</span></span><span class="sig-name descname"><span class="pre">library</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">GR</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.Cloudy_modeling.library" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>An object referring to one library of Cloudy models at a specific redshift.</p>
+<dl class="simple">
+<dt>GR: object</dt><dd><p>Instance of Global Results object, default: None</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">Cloudy_modeling</span> <span class="k">as</span> <span class="nn">clo</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">library_obj</span> <span class="o">=</span> <span class="n">clo</span><span class="o">.</span><span class="n">library</span><span class="p">(</span><span class="n">GR</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.Cloudy_modeling.library._get_Z_DTM_scaling">
+<span class="sig-name descname"><span class="pre">_get_Z_DTM_scaling</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.Cloudy_modeling.library._get_Z_DTM_scaling" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.Cloudy_modeling.library._restore_grid_table">
+<span class="sig-name descname"><span class="pre">_restore_grid_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid_ext</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.Cloudy_modeling.library._restore_grid_table" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.Cloudy_modeling.library._restore_lookup_table">
+<span class="sig-name descname"><span class="pre">_restore_lookup_table</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.Cloudy_modeling.library._restore_lookup_table" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.Cloudy_modeling.library.calculate_DTM">
+<span class="sig-name descname"><span class="pre">calculate_DTM</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">out_file_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'look-up-tables/cloudy/abundances/grid_run_test_Z1.out'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.Cloudy_modeling.library.calculate_DTM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.Cloudy_modeling.library.combine_output_files">
+<span class="sig-name descname"><span class="pre">combine_output_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ext</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.Cloudy_modeling.library.combine_output_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Combine individual cell models into combined grid output files (for grids that didn’t finish)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.Cloudy_modeling.library.create_job_scripts">
+<span class="sig-name descname"><span class="pre">create_job_scripts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ext</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.Cloudy_modeling.library.create_job_scripts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create PBS grid jobs</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.Cloudy_modeling.library.debug_grid">
+<span class="sig-name descname"><span class="pre">debug_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ext</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.Cloudy_modeling.library.debug_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find Cloudy grids that did not run and restart them</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.Cloudy_modeling.library.read_Mdust">
+<span class="sig-name descname"><span class="pre">read_Mdust</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ext</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.Cloudy_modeling.library.read_Mdust" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read Cloudy output files to study dust mass as function of Z</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.Cloudy_modeling.library.read_grids">
+<span class="sig-name descname"><span class="pre">read_grids</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.Cloudy_modeling.library.read_grids" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read output Cloudy files and store parameters and luminosities in dataframes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.Cloudy_modeling.library.read_one_cloudy_grid">
+<span class="sig-name descname"><span class="pre">read_one_cloudy_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i_grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cloudy_grd_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cloudy_lin_header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nHs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NH</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">FUV</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DTM</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">F_NUV</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">translate_Cloudy_lines</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.Cloudy_modeling.library.read_one_cloudy_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read one Cloudy grid, filling out missing zones with 0s</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.Cloudy_modeling.library.sample_cloudy_table">
+<span class="sig-name descname"><span class="pre">sample_cloudy_table</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.Cloudy_modeling.library.sample_cloudy_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sample Cloudy models in terms of mean density and Mach number</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.Cloudy_modeling.library.setup_Mdust_input">
+<span class="sig-name descname"><span class="pre">setup_Mdust_input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ext</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.Cloudy_modeling.library.setup_Mdust_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create Cloudy input files to study dust mass as function of Z</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.Cloudy_modeling.library.setup_grid_input">
+<span class="sig-name descname"><span class="pre">setup_grid_input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ext</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.Cloudy_modeling.library.setup_grid_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store grid parameters and create input files for Cloudy runs</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sigame.Cloudy_modeling.library.submit_jobs">
+<span class="sig-name descname"><span class="pre">submit_jobs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ext</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.Cloudy_modeling.library.submit_jobs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Submit PBS scripts</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-sigame.main">
+<span id="sigame-main-submodule"></span><h2>sigame.main submodule<a class="headerlink" href="#module-sigame.main" title="Permalink to this headline">¶</a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="sigame.main.p">
+<span class="sig-prename descclassname"><span class="pre">sigame.main.</span></span><span class="sig-name descname"><span class="pre">p</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;sigame.param.read_params</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sigame.main.p" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize a global result object (GR)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.main.print_results">
+<span class="sig-prename descclassname"><span class="pre">sigame.main.</span></span><span class="sig-name descname"><span class="pre">print_results</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.main.print_results" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print main global results</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.main.run">
+<span class="sig-prename descclassname"><span class="pre">sigame.main.</span></span><span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.main.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main controller that determines what tasks will be carried out</p>
+</dd></dl>
+
+</section>
+<section id="sigame-backend-submodule">
+<h2>sigame.backend submodule<a class="headerlink" href="#sigame-backend-submodule" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-sigame.backend"></span><dl class="py function">
+<dt class="sig sig-object py" id="sigame.backend.combine_Cloudy">
+<span class="sig-prename descclassname"><span class="pre">sigame.backend.</span></span><span class="sig-name descname"><span class="pre">combine_Cloudy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">GR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.backend.combine_Cloudy" title="Permalink to this definition">¶</a></dt>
+<dd><p>combines Cloudy grid output if some grids only finished partially</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.backend.complete_Cloudy">
+<span class="sig-prename descclassname"><span class="pre">sigame.backend.</span></span><span class="sig-name descname"><span class="pre">complete_Cloudy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">GR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.backend.complete_Cloudy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Completes Cloudy grid if some models did not finish</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.backend.derived_results">
+<span class="sig-prename descclassname"><span class="pre">sigame.backend.</span></span><span class="sig-name descname"><span class="pre">derived_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">GR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.backend.derived_results" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds derived mass-weighted and other quantities to global results file, 
+using particle and cell data.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.backend.grid_gas">
+<span class="sig-prename descclassname"><span class="pre">sigame.backend.</span></span><span class="sig-name descname"><span class="pre">grid_gas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">GR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.backend.grid_gas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs re-gridding of gas particle properties on the AMR 
+cell grid structure provided by SKIRT.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.backend.interpolate">
+<span class="sig-prename descclassname"><span class="pre">sigame.backend.</span></span><span class="sig-name descname"><span class="pre">interpolate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">GR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.backend.interpolate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs interpolation in Cloudy look-up tables to get line luminosities 
+for all gas particles in each galaxy.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.backend.make_Cloudy_table">
+<span class="sig-prename descclassname"><span class="pre">sigame.backend.</span></span><span class="sig-name descname"><span class="pre">make_Cloudy_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">GR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.backend.make_Cloudy_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads Cloudy grid output</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.backend.read_Cloudy_grid">
+<span class="sig-prename descclassname"><span class="pre">sigame.backend.</span></span><span class="sig-name descname"><span class="pre">read_Cloudy_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">GR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.backend.read_Cloudy_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read Cloudy grid output</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.backend.read_SKIRT">
+<span class="sig-prename descclassname"><span class="pre">sigame.backend.</span></span><span class="sig-name descname"><span class="pre">read_SKIRT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">GR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.backend.read_SKIRT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read output from SKIRT and create 
+new galaxy object based on SKIRT output grid</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.backend.run_Cloudy">
+<span class="sig-prename descclassname"><span class="pre">sigame.backend.</span></span><span class="sig-name descname"><span class="pre">run_Cloudy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">GR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.backend.run_Cloudy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs Cloudy grid models</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.backend.setup_Cloudy_grid">
+<span class="sig-prename descclassname"><span class="pre">sigame.backend.</span></span><span class="sig-name descname"><span class="pre">setup_Cloudy_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">GR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.backend.setup_Cloudy_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates input scripts for grid of Cloudy models</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.backend.setup_SKIRT">
+<span class="sig-prename descclassname"><span class="pre">sigame.backend.</span></span><span class="sig-name descname"><span class="pre">setup_SKIRT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">GR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.backend.setup_SKIRT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates input scripts for SKIRT to calculate the 
+interstellar radiation field (ISRF), 
+attenuated by dust via radiative transfer (RT).</p>
 </dd></dl>
 
 </section>
@@ -1121,6 +1517,287 @@ by selecting closest pairs in M_star, M_gas, SFR, and Z</p>
 <dt class="sig sig-object py" id="sigame.param.update_params_file">
 <span class="sig-prename descclassname"><span class="pre">sigame.param.</span></span><span class="sig-name descname"><span class="pre">update_params_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.param.update_params_file" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+</section>
+<section id="module-sigame.auxil">
+<span id="sigame-auxil-submodule"></span><h2>sigame.auxil submodule<a class="headerlink" href="#module-sigame.auxil" title="Permalink to this headline">¶</a></h2>
+<p>Module: aux</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.FIR_index">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">FIR_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wavelengths</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.FIR_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.FUV_index">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">FUV_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wa</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.FUV_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.Jy_km_s_to_Lsun">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">Jy_km_s_to_Lsun</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">L_Jy_km_s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">D_L</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.Jy_km_s_to_Lsun" title="Permalink to this definition">¶</a></dt>
+<dd><p>From Solomon 1997 ApJ 478</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.K_km_s_pc2_to_Lsun">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">K_km_s_pc2_to_Lsun</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">L_K_km_s_pc2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.K_km_s_pc2_to_Lsun" title="Permalink to this definition">¶</a></dt>
+<dd><p>From <a class="reference external" href="https://github.com/aconley/ALMAzsearch/blob/master/ALMAzsearch/radio_units.py">https://github.com/aconley/ALMAzsearch/blob/master/ALMAzsearch/radio_units.py</a>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.Lsun_to_Jy_km_s">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">Lsun_to_Jy_km_s</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">L_sun</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">D_L</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.Lsun_to_Jy_km_s" title="Permalink to this definition">¶</a></dt>
+<dd><p>From Solomon 1997 ApJ 478</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.Lsun_to_K_km_s_pc2">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">Lsun_to_K_km_s_pc2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">L_sun</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.Lsun_to_K_km_s_pc2" title="Permalink to this definition">¶</a></dt>
+<dd><p>From <a class="reference external" href="https://github.com/aconley/ALMAzsearch/blob/master/ALMAzsearch/radio_units.py">https://github.com/aconley/ALMAzsearch/blob/master/ALMAzsearch/radio_units.py</a>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.MIR_index">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">MIR_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wavelengths</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.MIR_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.MS_SFR_Mstar">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">MS_SFR_Mstar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Mstars</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.MS_SFR_Mstar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate SFR for given Mstars using MS at a certain redshift</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.NII_from_logne">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">NII_from_logne</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logne</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.NII_from_logne" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.OIR_index">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">OIR_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wa</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.OIR_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.PDF_MHD_func">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">PDF_MHD_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.PDF_MHD_func" title="Permalink to this definition">¶</a></dt>
+<dd><p>Density distribution in terms of mass per density bin.
+x: overdensity (density/mean(density))
+beta: gas to magnetic pressure ratio
+M: Mach number (velocity dispersion / sound speed)</p>
+<p>See Padoan+97, eq. 24 in Padoan+ 2011 and eq. 9a in Pallottini+ 2019</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.Pfunc">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">Pfunc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simgas1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simgas</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simstar</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m_gas</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m_star</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.Pfunc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the surface-density-dependent term that can get mid-plane pressure in galaxy._add_P_ext()
+OBS: Need for speed!!!</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.TIR_index">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">TIR_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wavelengths</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.TIR_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.UV_index">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">UV_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wa</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.UV_index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.Wendland_C2_kernel">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">Wendland_C2_kernel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.Wendland_C2_kernel" title="Permalink to this definition">¶</a></dt>
+<dd><p>From: <a class="reference external" href="https://github.com/SWIFTSIM/swiftsimio/blob/master/swiftsimio/visualisation/slice.py">https://github.com/SWIFTSIM/swiftsimio/blob/master/swiftsimio/visualisation/slice.py</a>
+Kernel implementation for swiftsimio. This is the Wendland-C2
+kernel as shown in Denhen &amp; Aly (2012).
+Give it a radius and a kernel width (i.e. not a smoothing length, but the
+radius of compact support) and it returns the contribution to the
+density.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.add_FIR_lum">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">add_FIR_lum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">R</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xy'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.add_FIR_lum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add FIR luminosity per pixel from SKIRT map output</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.cloudy_NII_ratio_ne">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">cloudy_NII_ratio_ne</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.cloudy_NII_ratio_ne" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate [NII] ratio as function of electron density from 1-zone Cloudy models</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.convert_cell_data_to_regular_grid">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">convert_cell_data_to_regular_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xy'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.convert_cell_data_to_regular_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function creates and stores a matrix that maps cell data to a regular grid in 2D.</p>
+<dl class="simple">
+<dt>gal_index: int</dt><dd><p>Galaxy index, default: 0</p>
+</dd>
+<dt>res: float</dt><dd><p>Pixel resolution in kpc</p>
+</dd>
+<dt>plane: str</dt><dd><p>Plane to project to (xy, xz, yz)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.distance_from_salim18">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">distance_from_salim18</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M_star</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">SFR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.distance_from_salim18" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns distance from Salim+18 z=0 MS in SFR.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.eV_to_micron">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">eV_to_micron</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eV</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.eV_to_micron" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.get_Cloudy_lines_dict">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">get_Cloudy_lines_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.get_Cloudy_lines_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.get_NH_from_cloudy">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">get_NH_from_cloudy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logZ</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.get_NH_from_cloudy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read grid made with different metallicities and column densities 
+to convert OIR/FUV flux ratios to column densities.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.get_file_location">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">get_file_location</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.get_file_location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds correct location and file name for a certain file type and galaxy</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.get_lum_dist">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">get_lum_dist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zred</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.get_lum_dist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate luminosity distance for a certain redshift
+returns D_L in Mpc</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.h5store">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">h5store</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dc_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.h5store" title="Permalink to this definition">¶</a></dt>
+<dd><p>Way to store metadata with dataframe</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.line_luminosity">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">line_luminosity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tree</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cell1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cell2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">celldensity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">R</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.line_luminosity" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns the added up total luminosity of the pixel, used by convert_cell_data_to_regular_grid.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.load_parameters">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">load_parameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.load_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.load_temp_file">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">load_temp_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.load_temp_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Way to load metadata with dataframe</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.logne_from_NII">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">logne_from_NII</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">NII_ratio</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.logne_from_NII" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.lognormal_PDF">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">lognormal_PDF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_vw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Mach</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.lognormal_PDF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make mass distribution from one lognormal</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.lognormal_powerlaw_PDF">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">lognormal_powerlaw_PDF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ratio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_vw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Mach</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.lognormal_powerlaw_PDF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make 1 or 2 lognormals with power-law tails</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.moment0_map_location">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">moment0_map_location</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.moment0_map_location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns location of moment0 map data.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.nm_to_eV">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">nm_to_eV</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.nm_to_eV" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.parametric_PDF">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">parametric_PDF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slope</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.parametric_PDF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make mass distribution from one lognormal with power-law tail</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.pretty_print">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">pretty_print</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">col_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">units</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.pretty_print" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.projection_scaling">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">projection_scaling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res_kpc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.projection_scaling" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find a scaling that can bring all coordinates to [0:1]
+for compatibility with swiftsimio functions</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.random_positions">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">random_positions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.random_positions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.read_SED_inst_wavelengths">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">read_SED_inst_wavelengths</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.read_SED_inst_wavelengths" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read wavelengths used for SED instrument.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.read_map_inst_wavelengths">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">read_map_inst_wavelengths</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.read_map_inst_wavelengths" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read wavelengths used for mapping (“frame”) instrument.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.read_probe_intensities">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">read_probe_intensities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Nbins</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.read_probe_intensities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read flux (in W/m2/micron/sr) from radiation field probe of each cell.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.read_probe_wavelengths">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">read_probe_wavelengths</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.read_probe_wavelengths" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read wavelengths used for radiation field probe of each cell.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.save_temp_file">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">save_temp_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subgrid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.save_temp_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stores temporary files according to their sim or ISM type and stage of processing.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.select_salim18">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">select_salim18</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M_star</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">SFR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.select_salim18" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects galaxies within quartile range of Salim+18 z=0 MS.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.tanh_func">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">tanh_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.tanh_func" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sigame.auxil.update_dictionary">
+<span class="sig-prename descclassname"><span class="pre">sigame.auxil.</span></span><span class="sig-name descname"><span class="pre">update_dictionary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.auxil.update_dictionary" title="Permalink to this definition">¶</a></dt>
+<dd><p>updates the entries to values with entries from new_values that have
+matching keys.</p>
+</dd></dl>
 
 </section>
 </section>

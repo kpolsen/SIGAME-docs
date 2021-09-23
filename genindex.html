@@ -105,8 +105,12 @@
 <li class="toctree-l1"><a class="reference internal" href="sigame.html">SÍGAME module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="sigame.html#module-sigame.galaxy">sigame.galaxy submodule</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sigame.html#module-sigame.global_results">sigame.global_results submodule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sigame.html#sigame-cloudy-modeling-submodule">sigame.Cloudy_modeling submodule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sigame.html#module-sigame.main">sigame.main submodule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sigame.html#sigame-backend-submodule">sigame.backend submodule</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sigame.html#module-sigame.plot">sigame.plot submodule</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sigame.html#module-sigame.param">sigame.param submodule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sigame.html#module-sigame.auxil">sigame.auxil submodule</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a><ul>
@@ -130,7 +134,8 @@
 <h1 id="index">Index</h1>
 
 <div class="genindex-jumpbox">
- <a href="#A"><strong>A</strong></a>
+ <a href="#_"><strong>_</strong></a>
+ | <a href="#A"><strong>A</strong></a>
  | <a href="#B"><strong>B</strong></a>
  | <a href="#C"><strong>C</strong></a>
  | <a href="#D"><strong>D</strong></a>
@@ -139,16 +144,92 @@
  | <a href="#G"><strong>G</strong></a>
  | <a href="#H"><strong>H</strong></a>
  | <a href="#I"><strong>I</strong></a>
+ | <a href="#J"><strong>J</strong></a>
+ | <a href="#K"><strong>K</strong></a>
  | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
  | <a href="#N"><strong>N</strong></a>
+ | <a href="#O"><strong>O</strong></a>
  | <a href="#P"><strong>P</strong></a>
  | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
  | <a href="#T"><strong>T</strong></a>
  | <a href="#U"><strong>U</strong></a>
+ | <a href="#W"><strong>W</strong></a>
  
 </div>
+<h2 id="_">_</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="sigame.html#sigame.global_results.global_results.__create_selection_from_enzo">__create_selection_from_enzo() (sigame.global_results.global_results method)</a>
+</li>
+      <li><a href="sigame.html#sigame.global_results.global_results.__create_selection_from_simba">__create_selection_from_simba() (sigame.global_results.global_results method)</a>
+</li>
+      <li><a href="sigame.html#sigame.global_results.global_results.__get_file_location">__get_file_location() (sigame.global_results.global_results method)</a>
+</li>
+      <li><a href="sigame.html#sigame.global_results.global_results.__set_attr">__set_attr() (sigame.global_results.global_results method)</a>
+</li>
+      <li><a href="sigame.html#sigame.galaxy.isrf._add_bol_lum">_add_bol_lum() (sigame.galaxy.isrf method)</a>
+</li>
+      <li><a href="sigame.html#sigame.galaxy.cell_data._add_data">_add_data() (sigame.galaxy.cell_data method)</a>
+
+      <ul>
+        <li><a href="sigame.html#sigame.galaxy.particle_data._add_data">(sigame.galaxy.particle_data method)</a>
+</li>
+      </ul></li>
+      <li><a href="sigame.html#sigame.galaxy.cell_data._add_DTM">_add_DTM() (sigame.galaxy.cell_data method)</a>
+</li>
+      <li><a href="sigame.html#sigame.galaxy.cell_data._add_FIR_flux">_add_FIR_flux() (sigame.galaxy.cell_data method)</a>
+</li>
+      <li><a href="sigame.html#sigame.galaxy.isrf._add_FIR_lum">_add_FIR_lum() (sigame.galaxy.isrf method)</a>
+</li>
+      <li><a href="sigame.html#sigame.galaxy.cell_data._add_FUV_flux">_add_FUV_flux() (sigame.galaxy.cell_data method)</a>
+</li>
+      <li><a href="sigame.html#sigame.galaxy.isrf._add_FUV_lum">_add_FUV_lum() (sigame.galaxy.isrf method)</a>
+</li>
+      <li><a href="sigame.html#sigame.galaxy.cell_data._add_metallicity">_add_metallicity() (sigame.galaxy.cell_data method)</a>
+</li>
+      <li><a href="sigame.html#sigame.galaxy.cell_data._add_nH">_add_nH() (sigame.galaxy.cell_data method)</a>
+</li>
+      <li><a href="sigame.html#sigame.galaxy.cell_data._add_SFR_density">_add_SFR_density() (sigame.galaxy.cell_data method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="sigame.html#sigame.galaxy.isrf._add_TIR_lum">_add_TIR_lum() (sigame.galaxy.isrf method)</a>
+</li>
+      <li><a href="sigame.html#sigame.galaxy.cell_data._add_velocity">_add_velocity() (sigame.galaxy.cell_data method)</a>
+</li>
+      <li><a href="sigame.html#sigame.galaxy.cell_data._do_interpolation_cells">_do_interpolation_cells() (sigame.galaxy.cell_data method)</a>
+</li>
+      <li><a href="sigame.html#sigame.galaxy.isrf._get_cut_probe">_get_cut_probe() (sigame.galaxy.isrf method)</a>
+</li>
+      <li><a href="sigame.html#sigame.global_results.global_results._get_file">_get_file() (sigame.global_results.global_results method)</a>
+</li>
+      <li><a href="sigame.html#sigame.galaxy.isrf._get_map_inst">_get_map_inst() (sigame.galaxy.isrf method)</a>
+</li>
+      <li><a href="sigame.html#sigame.galaxy.cell_data._get_name">_get_name() (sigame.galaxy.cell_data method)</a>
+
+      <ul>
+        <li><a href="sigame.html#sigame.galaxy.isrf._get_name">(sigame.galaxy.isrf method)</a>
+</li>
+      </ul></li>
+      <li><a href="sigame.html#sigame.Cloudy_modeling.library._get_Z_DTM_scaling">_get_Z_DTM_scaling() (sigame.Cloudy_modeling.library method)</a>
+</li>
+      <li><a href="sigame.html#sigame.galaxy.cell_data._interpolate_cloudy_cell_table">_interpolate_cloudy_cell_table() (sigame.galaxy.cell_data method)</a>
+</li>
+      <li><a href="sigame.html#sigame.galaxy.cell_data._read_cellprops">_read_cellprops() (sigame.galaxy.cell_data method)</a>
+</li>
+      <li><a href="sigame.html#sigame.galaxy.isrf._read_SED">_read_SED() (sigame.galaxy.isrf method)</a>
+</li>
+      <li><a href="sigame.html#sigame.Cloudy_modeling.library._restore_grid_table">_restore_grid_table() (sigame.Cloudy_modeling.library method)</a>
+</li>
+      <li><a href="sigame.html#sigame.Cloudy_modeling.library._restore_lookup_table">_restore_lookup_table() (sigame.Cloudy_modeling.library method)</a>
+</li>
+      <li><a href="sigame.html#sigame.galaxy.isrf._set_distance_to_galaxy">_set_distance_to_galaxy() (sigame.galaxy.isrf method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -157,6 +238,8 @@
       <li><a href="sigame.html#sigame.global_results.global_results.add_column">add_column() (sigame.global_results.global_results method)</a>
 </li>
       <li><a href="sigame.html#sigame.param.read_params.add_default_args">add_default_args() (sigame.param.read_params method)</a>
+</li>
+      <li><a href="sigame.html#sigame.auxil.add_FIR_lum">add_FIR_lum() (in module sigame.auxil)</a>
 </li>
       <li><a href="sigame.html#sigame.plot.add_line_FIR_obs">add_line_FIR_obs() (in module sigame.plot)</a>
 </li>
@@ -194,6 +277,8 @@
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="sigame.html#sigame.Cloudy_modeling.library.calculate_DTM">calculate_DTM() (sigame.Cloudy_modeling.library method)</a>
+</li>
       <li><a href="sigame.html#sigame.galaxy.cell_data">cell_data (class in sigame.galaxy)</a>
 </li>
       <li><a href="sigame.html#sigame.plot.cell_data_diag">cell_data_diag() (in module sigame.plot)</a>
@@ -210,19 +295,25 @@
 </li>
       <li><a href="sigame.html#sigame.plot.cloudy_grid_map">cloudy_grid_map() (in module sigame.plot)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="sigame.html#sigame.plot.cloudy_grid_surface">cloudy_grid_surface() (in module sigame.plot)</a>
 </li>
       <li><a href="sigame.html#sigame.plot.cloudy_hii_NII_ratio">cloudy_hii_NII_ratio() (in module sigame.plot)</a>
 </li>
       <li><a href="sigame.html#sigame.plot.cloudy_hii_radial_hyd">cloudy_hii_radial_hyd() (in module sigame.plot)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="sigame.html#sigame.plot.cloudy_hii_radial_lins">cloudy_hii_radial_lins() (in module sigame.plot)</a>
+</li>
+      <li><a href="sigame.html#sigame.auxil.cloudy_NII_ratio_ne">cloudy_NII_ratio_ne() (in module sigame.auxil)</a>
 </li>
       <li><a href="sigame.html#sigame.plot.cloudy_table_map">cloudy_table_map() (in module sigame.plot)</a>
 </li>
       <li><a href="sigame.html#sigame.plot.cloudy_table_scatter">cloudy_table_scatter() (in module sigame.plot)</a>
+</li>
+      <li><a href="sigame.html#sigame.backend.combine_Cloudy">combine_Cloudy() (in module sigame.backend)</a>
+</li>
+      <li><a href="sigame.html#sigame.Cloudy_modeling.library.combine_output_files">combine_output_files() (sigame.Cloudy_modeling.library method)</a>
 </li>
       <li><a href="sigame.html#sigame.plot.compare_CII_w_models">compare_CII_w_models() (in module sigame.plot)</a>
 </li>
@@ -230,20 +321,32 @@
 </li>
       <li><a href="sigame.html#sigame.plot.compare_SIGAME_runs">compare_SIGAME_runs() (in module sigame.plot)</a>
 </li>
+      <li><a href="sigame.html#sigame.backend.complete_Cloudy">complete_Cloudy() (in module sigame.backend)</a>
+</li>
+      <li><a href="sigame.html#sigame.auxil.convert_cell_data_to_regular_grid">convert_cell_data_to_regular_grid() (in module sigame.auxil)</a>
+</li>
+      <li><a href="sigame.html#sigame.Cloudy_modeling.library.create_job_scripts">create_job_scripts() (sigame.Cloudy_modeling.library method)</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="D">D</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="sigame.html#sigame.Cloudy_modeling.library.debug_grid">debug_grid() (sigame.Cloudy_modeling.library method)</a>
+</li>
+      <li><a href="sigame.html#sigame.backend.derived_results">derived_results() (in module sigame.backend)</a>
+</li>
+      <li><a href="sigame.html#sigame.auxil.distance_from_salim18">distance_from_salim18() (in module sigame.auxil)</a>
+</li>
       <li><a href="sigame.html#sigame.plot.dline_dSFR">dline_dSFR() (in module sigame.plot)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="sigame.html#sigame.plot.dline_dSFR_array">dline_dSFR_array() (in module sigame.plot)</a>
 </li>
       <li><a href="sigame.html#sigame.plot.dline_Mgas">dline_Mgas() (in module sigame.plot)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="sigame.html#sigame.plot.dline_Mgas_array">dline_Mgas_array() (in module sigame.plot)</a>
 </li>
       <li><a href="sigame.html#sigame.plot.dline_tdepl">dline_tdepl() (in module sigame.plot)</a>
@@ -262,18 +365,24 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="sigame.html#sigame.plot.emission_vs_depth">emission_vs_depth() (in module sigame.plot)</a>
 </li>
+      <li><a href="sigame.html#sigame.auxil.eV_to_micron">eV_to_micron() (in module sigame.auxil)</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="F">F</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="sigame.html#sigame.auxil.FIR_index">FIR_index() (in module sigame.auxil)</a>
+</li>
       <li><a href="sigame.html#sigame.plot.FUV_crosssec">FUV_crosssec() (in module sigame.plot)</a>
 </li>
       <li><a href="sigame.html#sigame.plot.FUV_fluxes">FUV_fluxes() (in module sigame.plot)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="sigame.html#sigame.auxil.FUV_index">FUV_index() (in module sigame.auxil)</a>
+</li>
       <li><a href="sigame.html#sigame.plot.FUV_lums">FUV_lums() (in module sigame.plot)</a>
 </li>
       <li><a href="sigame.html#sigame.plot.FUV_map">FUV_map() (in module sigame.plot)</a>
@@ -290,17 +399,29 @@
 </li>
       <li><a href="sigame.html#sigame.global_results.global_results.get_attr">get_attr() (sigame.global_results.global_results method)</a>
 </li>
+      <li><a href="sigame.html#sigame.auxil.get_Cloudy_lines_dict">get_Cloudy_lines_dict() (in module sigame.auxil)</a>
+</li>
       <li><a href="sigame.html#sigame.galaxy.cell_data.get_dataframe">get_dataframe() (sigame.galaxy.cell_data method)</a>
 
       <ul>
         <li><a href="sigame.html#sigame.galaxy.particle_data.get_dataframe">(sigame.galaxy.particle_data method)</a>
 </li>
       </ul></li>
+      <li><a href="sigame.html#sigame.Cloudy_modeling.get_dust_mass">get_dust_mass() (in module sigame.Cloudy_modeling)</a>
+</li>
+      <li><a href="sigame.html#sigame.auxil.get_file_location">get_file_location() (in module sigame.auxil)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="sigame.html#sigame.global_results.global_results.get_gal_index">get_gal_index() (sigame.global_results.global_results method)</a>
 </li>
       <li><a href="sigame.html#sigame.global_results.global_results.get_gal_num">get_gal_num() (sigame.global_results.global_results method)</a>
+</li>
+      <li><a href="sigame.html#sigame.auxil.get_lum_dist">get_lum_dist() (in module sigame.auxil)</a>
+</li>
+      <li><a href="sigame.html#sigame.Cloudy_modeling.get_metal_mass">get_metal_mass() (in module sigame.Cloudy_modeling)</a>
+</li>
+      <li><a href="sigame.html#sigame.auxil.get_NH_from_cloudy">get_NH_from_cloudy() (in module sigame.auxil)</a>
 </li>
       <li><a href="sigame.html#sigame.plot.getlabel">getlabel() (in module sigame.plot)</a>
 </li>
@@ -308,16 +429,20 @@
 </li>
       <li><a href="sigame.html#sigame.galaxy.grid">grid (class in sigame.galaxy)</a>
 </li>
+      <li><a href="sigame.html#sigame.backend.grid_gas">grid_gas() (in module sigame.backend)</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="H">H</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="sigame.html#sigame.param.read_params.Herschel_limits">Herschel_limits (sigame.param.read_params attribute)</a>
+      <li><a href="sigame.html#sigame.auxil.h5store">h5store() (in module sigame.auxil)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="sigame.html#sigame.param.read_params.Herschel_limits">Herschel_limits (sigame.param.read_params attribute)</a>
+</li>
       <li><a href="sigame.html#sigame.plot.histos">histos() (in module sigame.plot)</a>
 </li>
   </ul></td>
@@ -326,6 +451,8 @@
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="sigame.html#sigame.backend.interpolate">interpolate() (in module sigame.backend)</a>
+</li>
       <li><a href="sigame.html#sigame.galaxy.interpolation">interpolation (class in sigame.galaxy)</a>
 </li>
       <li><a href="sigame.html#sigame.plot.ISM_effs">ISM_effs() (in module sigame.plot)</a>
@@ -341,14 +468,34 @@
   </ul></td>
 </tr></table>
 
+<h2 id="J">J</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="sigame.html#sigame.auxil.Jy_km_s_to_Lsun">Jy_km_s_to_Lsun() (in module sigame.auxil)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="K">K</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="sigame.html#sigame.auxil.K_km_s_pc2_to_Lsun">K_km_s_pc2_to_Lsun() (in module sigame.auxil)</a>
+</li>
+  </ul></td>
+</tr></table>
+
 <h2 id="L">L</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="sigame.html#sigame.plot.L_TIR_SFR">L_TIR_SFR() (in module sigame.plot)</a>
 </li>
+      <li><a href="sigame.html#sigame.Cloudy_modeling.library">library (class in sigame.Cloudy_modeling)</a>
+</li>
       <li><a href="sigame.html#sigame.plot.line_FIR">line_FIR() (in module sigame.plot)</a>
 </li>
       <li><a href="sigame.html#sigame.plot.line_FIR_array">line_FIR_array() (in module sigame.plot)</a>
+</li>
+      <li><a href="sigame.html#sigame.auxil.line_luminosity">line_luminosity() (in module sigame.auxil)</a>
 </li>
       <li><a href="sigame.html#sigame.plot.line_Mgas">line_Mgas() (in module sigame.plot)</a>
 </li>
@@ -360,12 +507,12 @@
 </li>
       <li><a href="sigame.html#sigame.plot.line_ratio_map">line_ratio_map() (in module sigame.plot)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="sigame.html#sigame.plot.line_ratio_per_cell">line_ratio_per_cell() (in module sigame.plot)</a>
 </li>
       <li><a href="sigame.html#sigame.plot.line_ratio_per_pixel">line_ratio_per_pixel() (in module sigame.plot)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="sigame.html#sigame.plot.line_ratio_per_pixel_AHIMSA">line_ratio_per_pixel_AHIMSA() (in module sigame.plot)</a>
 </li>
       <li><a href="sigame.html#sigame.plot.line_ratio_per_pixel_w_hist">line_ratio_per_pixel_w_hist() (in module sigame.plot)</a>
@@ -378,6 +525,20 @@
 </li>
       <li><a href="sigame.html#sigame.plot.line_sSFR_array">line_sSFR_array() (in module sigame.plot)</a>
 </li>
+      <li><a href="sigame.html#sigame.auxil.load_parameters">load_parameters() (in module sigame.auxil)</a>
+</li>
+      <li><a href="sigame.html#sigame.auxil.load_temp_file">load_temp_file() (in module sigame.auxil)</a>
+</li>
+      <li><a href="sigame.html#sigame.auxil.logne_from_NII">logne_from_NII() (in module sigame.auxil)</a>
+</li>
+      <li><a href="sigame.html#sigame.auxil.lognormal_PDF">lognormal_PDF() (in module sigame.auxil)</a>
+</li>
+      <li><a href="sigame.html#sigame.auxil.lognormal_powerlaw_PDF">lognormal_powerlaw_PDF() (in module sigame.auxil)</a>
+</li>
+      <li><a href="sigame.html#sigame.auxil.Lsun_to_Jy_km_s">Lsun_to_Jy_km_s() (in module sigame.auxil)</a>
+</li>
+      <li><a href="sigame.html#sigame.auxil.Lsun_to_K_km_s_pc2">Lsun_to_K_km_s_pc2() (in module sigame.auxil)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -385,6 +546,8 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="sigame.html#sigame.plot.Main_Sequence">Main_Sequence() (in module sigame.plot)</a>
+</li>
+      <li><a href="sigame.html#sigame.backend.make_Cloudy_table">make_Cloudy_table() (in module sigame.backend)</a>
 </li>
       <li><a href="sigame.html#sigame.plot.make_projection_map">make_projection_map() (in module sigame.plot)</a>
 </li>
@@ -398,13 +561,23 @@
 </li>
       <li><a href="sigame.html#sigame.plot.mass_luminosity_ratio">mass_luminosity_ratio() (in module sigame.plot)</a>
 </li>
+      <li><a href="sigame.html#sigame.auxil.MIR_index">MIR_index() (in module sigame.auxil)</a>
+</li>
       <li>
     module
 
       <ul>
+        <li><a href="sigame.html#module-sigame.auxil">sigame.auxil</a>
+</li>
+        <li><a href="sigame.html#module-sigame.backend">sigame.backend</a>
+</li>
+        <li><a href="sigame.html#module-sigame.Cloudy_modeling">sigame.Cloudy_modeling</a>
+</li>
         <li><a href="sigame.html#module-sigame.galaxy">sigame.galaxy</a>
 </li>
         <li><a href="sigame.html#module-sigame.global_results">sigame.global_results</a>
+</li>
+        <li><a href="sigame.html#module-sigame.main">sigame.main</a>
 </li>
         <li><a href="sigame.html#module-sigame.param">sigame.param</a>
 </li>
@@ -415,9 +588,13 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="sigame.html#sigame.plot.moment0_map">moment0_map() (in module sigame.plot)</a>
 </li>
+      <li><a href="sigame.html#sigame.auxil.moment0_map_location">moment0_map_location() (in module sigame.auxil)</a>
+</li>
       <li><a href="sigame.html#sigame.plot.morph_CII">morph_CII() (in module sigame.plot)</a>
 </li>
       <li><a href="sigame.html#sigame.plot.movie">movie() (in module sigame.plot)</a>
+</li>
+      <li><a href="sigame.html#sigame.auxil.MS_SFR_Mstar">MS_SFR_Mstar() (in module sigame.auxil)</a>
 </li>
       <li><a href="sigame.html#sigame.plot.Mstar_function">Mstar_function() (in module sigame.plot)</a>
 </li>
@@ -429,9 +606,21 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="sigame.html#sigame.plot.NH_function">NH_function() (in module sigame.plot)</a>
 </li>
+      <li><a href="sigame.html#sigame.auxil.NII_from_logne">NII_from_logne() (in module sigame.auxil)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="sigame.html#sigame.plot.NII_ratio_ne">NII_ratio_ne() (in module sigame.plot)</a>
+</li>
+      <li><a href="sigame.html#sigame.auxil.nm_to_eV">nm_to_eV() (in module sigame.auxil)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="sigame.html#sigame.auxil.OIR_index">OIR_index() (in module sigame.auxil)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -439,21 +628,37 @@
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="sigame.html#sigame.main.p">p (in module sigame.main)</a>
+</li>
+      <li><a href="sigame.html#sigame.auxil.parametric_PDF">parametric_PDF() (in module sigame.auxil)</a>
+</li>
       <li><a href="sigame.html#sigame.plot.params">params (in module sigame.plot)</a>
 </li>
       <li><a href="sigame.html#sigame.galaxy.particle_data">particle_data (class in sigame.galaxy)</a>
 </li>
       <li><a href="sigame.html#sigame.plot.PDF">PDF() (in module sigame.plot)</a>
 </li>
+      <li><a href="sigame.html#sigame.auxil.PDF_MHD_func">PDF_MHD_func() (in module sigame.auxil)</a>
+</li>
+      <li><a href="sigame.html#sigame.auxil.Pfunc">Pfunc() (in module sigame.auxil)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="sigame.html#sigame.auxil.pretty_print">pretty_print() (in module sigame.auxil)</a>
+</li>
       <li><a href="sigame.html#sigame.global_results.global_results.print_all">print_all() (sigame.global_results.global_results method)</a>
 </li>
       <li><a href="sigame.html#sigame.global_results.global_results.print_galaxy_properties">print_galaxy_properties() (sigame.global_results.global_results method)</a>
 </li>
       <li><a href="sigame.html#sigame.global_results.global_results.print_header">print_header() (sigame.global_results.global_results method)</a>
 </li>
-      <li><a href="sigame.html#sigame.global_results.global_results.print_results">print_results() (sigame.global_results.global_results method)</a>
+      <li><a href="sigame.html#sigame.main.print_results">print_results() (in module sigame.main)</a>
+
+      <ul>
+        <li><a href="sigame.html#sigame.global_results.global_results.print_results">(sigame.global_results.global_results method)</a>
+</li>
+      </ul></li>
+      <li><a href="sigame.html#sigame.auxil.projection_scaling">projection_scaling() (in module sigame.auxil)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -461,19 +666,47 @@
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="sigame.html#sigame.auxil.random_positions">random_positions() (in module sigame.auxil)</a>
+</li>
+      <li><a href="sigame.html#sigame.backend.read_Cloudy_grid">read_Cloudy_grid() (in module sigame.backend)</a>
+</li>
+      <li><a href="sigame.html#sigame.Cloudy_modeling.library.read_grids">read_grids() (sigame.Cloudy_modeling.library method)</a>
+</li>
+      <li><a href="sigame.html#sigame.auxil.read_map_inst_wavelengths">read_map_inst_wavelengths() (in module sigame.auxil)</a>
+</li>
+      <li><a href="sigame.html#sigame.Cloudy_modeling.library.read_Mdust">read_Mdust() (sigame.Cloudy_modeling.library method)</a>
+</li>
+      <li><a href="sigame.html#sigame.Cloudy_modeling.library.read_one_cloudy_grid">read_one_cloudy_grid() (sigame.Cloudy_modeling.library method)</a>
+</li>
       <li><a href="sigame.html#sigame.param.read_params">read_params (class in sigame.param)</a>
 </li>
-      <li><a href="sigame.html#sigame.galaxy.read_SKIRT">read_SKIRT() (in module sigame.galaxy)</a>
+      <li><a href="sigame.html#sigame.auxil.read_probe_intensities">read_probe_intensities() (in module sigame.auxil)</a>
 </li>
+      <li><a href="sigame.html#sigame.auxil.read_probe_wavelengths">read_probe_wavelengths() (in module sigame.auxil)</a>
+</li>
+      <li><a href="sigame.html#sigame.auxil.read_SED_inst_wavelengths">read_SED_inst_wavelengths() (in module sigame.auxil)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="sigame.html#sigame.backend.read_SKIRT">read_SKIRT() (in module sigame.backend)</a>
+
+      <ul>
+        <li><a href="sigame.html#sigame.galaxy.read_SKIRT">(in module sigame.galaxy)</a>
+</li>
+      </ul></li>
       <li><a href="sigame.html#sigame.galaxy.isrf.read_skirt_output">read_skirt_output() (sigame.galaxy.isrf method)</a>
 </li>
       <li><a href="sigame.html#sigame.plot.resolution_test">resolution_test() (in module sigame.plot)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="sigame.html#sigame.galaxy.grid.run">run() (sigame.galaxy.grid method)</a>
+      <li><a href="sigame.html#sigame.main.run">run() (in module sigame.main)</a>
+
+      <ul>
+        <li><a href="sigame.html#sigame.galaxy.grid.run">(sigame.galaxy.grid method)</a>
 </li>
+      </ul></li>
       <li><a href="sigame.html#sigame.galaxy.interpolation.run_cells">run_cells() (sigame.galaxy.interpolation method)</a>
+</li>
+      <li><a href="sigame.html#sigame.backend.run_Cloudy">run_Cloudy() (in module sigame.backend)</a>
 </li>
       <li><a href="sigame.html#sigame.galaxy.run_grid">run_grid() (in module sigame.galaxy)</a>
 </li>
@@ -485,6 +718,8 @@
 <h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="sigame.html#sigame.Cloudy_modeling.library.sample_cloudy_table">sample_cloudy_table() (sigame.Cloudy_modeling.library method)</a>
+</li>
       <li><a href="sigame.html#sigame.galaxy.cell_data.save_dataframe">save_dataframe() (sigame.galaxy.cell_data method)</a>
 
       <ul>
@@ -493,16 +728,53 @@
       </ul></li>
       <li><a href="sigame.html#sigame.global_results.global_results.save_results">save_results() (sigame.global_results.global_results method)</a>
 </li>
+      <li><a href="sigame.html#sigame.auxil.save_temp_file">save_temp_file() (in module sigame.auxil)</a>
+</li>
       <li><a href="sigame.html#sigame.plot.SED">SED() (in module sigame.plot)</a>
 </li>
-      <li><a href="sigame.html#sigame.galaxy.setup_SKIRT">setup_SKIRT() (in module sigame.galaxy)</a>
+      <li><a href="sigame.html#sigame.auxil.select_salim18">select_salim18() (in module sigame.auxil)</a>
 </li>
+      <li><a href="sigame.html#sigame.backend.setup_Cloudy_grid">setup_Cloudy_grid() (in module sigame.backend)</a>
+</li>
+      <li><a href="sigame.html#sigame.Cloudy_modeling.library.setup_grid_input">setup_grid_input() (sigame.Cloudy_modeling.library method)</a>
+</li>
+      <li><a href="sigame.html#sigame.Cloudy_modeling.library.setup_Mdust_input">setup_Mdust_input() (sigame.Cloudy_modeling.library method)</a>
+</li>
+      <li><a href="sigame.html#sigame.backend.setup_SKIRT">setup_SKIRT() (in module sigame.backend)</a>
+
+      <ul>
+        <li><a href="sigame.html#sigame.galaxy.setup_SKIRT">(in module sigame.galaxy)</a>
+</li>
+      </ul></li>
       <li><a href="sigame.html#sigame.galaxy.grid.setup_tasks">setup_tasks() (sigame.galaxy.grid method)</a>
 
       <ul>
         <li><a href="sigame.html#sigame.galaxy.interpolation.setup_tasks">(sigame.galaxy.interpolation method)</a>
 </li>
         <li><a href="sigame.html#sigame.galaxy.isrf.setup_tasks">(sigame.galaxy.isrf method)</a>
+</li>
+      </ul></li>
+      <li>
+    sigame.auxil
+
+      <ul>
+        <li><a href="sigame.html#module-sigame.auxil">module</a>
+</li>
+      </ul></li>
+      <li>
+    sigame.backend
+
+      <ul>
+        <li><a href="sigame.html#module-sigame.backend">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    sigame.Cloudy_modeling
+
+      <ul>
+        <li><a href="sigame.html#module-sigame.Cloudy_modeling">module</a>
 </li>
       </ul></li>
       <li>
@@ -519,8 +791,13 @@
         <li><a href="sigame.html#module-sigame.global_results">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    sigame.main
+
+      <ul>
+        <li><a href="sigame.html#module-sigame.main">module</a>
+</li>
+      </ul></li>
       <li>
     sigame.param
 
@@ -547,12 +824,16 @@
 </li>
       <li><a href="sigame.html#sigame.galaxy.cell_data.start_dataframe">start_dataframe() (sigame.galaxy.cell_data method)</a>
 </li>
+      <li><a href="sigame.html#sigame.Cloudy_modeling.library.submit_jobs">submit_jobs() (sigame.Cloudy_modeling.library method)</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="T">T</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="sigame.html#sigame.auxil.tanh_func">tanh_func() (in module sigame.auxil)</a>
+</li>
       <li><a href="sigame.html#sigame.plot.Te_ne_P_panel">Te_ne_P_panel() (in module sigame.plot)</a>
 </li>
       <li><a href="sigame.html#sigame.plot.three_mass_FUV_maps">three_mass_FUV_maps() (in module sigame.plot)</a>
@@ -563,13 +844,29 @@
 </li>
       <li><a href="sigame.html#sigame.plot.three_PDF_plots">three_PDF_plots() (in module sigame.plot)</a>
 </li>
+      <li><a href="sigame.html#sigame.auxil.TIR_index">TIR_index() (in module sigame.auxil)</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="U">U</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="sigame.html#sigame.auxil.update_dictionary">update_dictionary() (in module sigame.auxil)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="sigame.html#sigame.param.update_params_file">update_params_file() (in module sigame.param)</a>
+</li>
+      <li><a href="sigame.html#sigame.auxil.UV_index">UV_index() (in module sigame.auxil)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="sigame.html#sigame.auxil.Wendland_C2_kernel">Wendland_C2_kernel() (in module sigame.auxil)</a>
 </li>
   </ul></td>
 </tr></table>
