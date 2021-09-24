@@ -522,8 +522,7 @@ Child class that inherits from parent class ‘galaxy’.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="sigame.global_results.global_results">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sigame.global_results.</span></span><span class="sig-name descname"><span class="pre">global_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.global_results.global_results" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>An object referring to the global results of a selection of galaxies, containing global properties of as attributes.</p>
+<dd><p>A class to handle the properties of an entire galaxy sample, containing global galaxy properties as attributes.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">global_results</span> <span class="k">as</span> <span class="nn">glo</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">GR</span> <span class="o">=</span> <span class="n">glo</span><span class="o">.</span><span class="n">global_results</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">GR</span><span class="o">.</span><span class="n">print_results</span><span class="p">()</span>
@@ -537,72 +536,80 @@ Child class that inherits from parent class ‘galaxy’.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.global_results.global_results.__get_file_location">
 <span class="sig-name descname"><span class="pre">__get_file_location</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.global_results.global_results.__get_file_location" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Returns file location of current global results file.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.global_results.global_results.__create_selection_from_simba">
 <span class="sig-name descname"><span class="pre">__create_selection_from_simba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.global_results.global_results.__create_selection_from_simba" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Creates initial global results file from Simba simulation data alone.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.global_results.global_results.__set_attr">
 <span class="sig-name descname"><span class="pre">__set_attr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">GR_int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.global_results.global_results.__set_attr" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Derives and sets additional attributes</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.global_results.global_results.__create_selection_from_enzo">
 <span class="sig-name descname"><span class="pre">__create_selection_from_enzo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.global_results.global_results.__create_selection_from_enzo" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Creates initial global results file from ENZO simulation data alone.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.global_results.global_results.get_gal_index">
 <span class="sig-name descname"><span class="pre">get_gal_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gal_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.global_results.global_results.get_gal_index" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Returns galaxy index for given galaxy number in simulation box.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.global_results.global_results.get_gal_num">
 <span class="sig-name descname"><span class="pre">get_gal_num</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gal_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.global_results.global_results.get_gal_num" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Returns galaxy number in simulation box for given galaxy index.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.global_results.global_results.get_attr">
 <span class="sig-name descname"><span class="pre">get_attr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.global_results.global_results.get_attr" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Returns attribute of GR object.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.global_results.global_results.edit_item">
 <span class="sig-name descname"><span class="pre">edit_item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">galname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.global_results.global_results.edit_item" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Updates property of a single galaxy in the sample and saves new dataframe of galaxy sample.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.global_results.global_results.add_column">
 <span class="sig-name descname"><span class="pre">add_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.global_results.global_results.add_column" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Adds galaxy property to dataframe of galaxy sample.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.global_results.global_results.save_results">
 <span class="sig-name descname"><span class="pre">save_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">GR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.global_results.global_results.save_results" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Saves object attributes to file as dataframe.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.global_results.global_results.print_header">
 <span class="sig-name descname"><span class="pre">print_header</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.global_results.global_results.print_header" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Prints properties for first 10 galaxies.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.global_results.global_results.print_all">
 <span class="sig-name descname"><span class="pre">print_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.global_results.global_results.print_all" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Prints all galaxy sample properties as dataframe.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.global_results.global_results.print_results">
 <span class="sig-name descname"><span class="pre">print_results</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.global_results.global_results.print_results" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="sigame.global_results.global_results.print_galaxy_properties">
-<span class="sig-name descname"><span class="pre">print_galaxy_properties</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.global_results.global_results.print_galaxy_properties" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Prints galaxy sample properties in pretty format in the terminal.</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -614,8 +621,7 @@ scripts to read the output.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="sigame.Cloudy_modeling.library">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sigame.Cloudy_modeling.</span></span><span class="sig-name descname"><span class="pre">library</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">GR</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.Cloudy_modeling.library" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>An object referring to one library of Cloudy models at a specific redshift.</p>
+<dd><p>An object referring to one library of Cloudy models at a specific redshift.</p>
 <dl class="simple">
 <dt>GR: object</dt><dd><p>Instance of Global Results object, default: None</p>
 </dd>
@@ -1513,8 +1519,7 @@ in subplots with common x axis</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="sigame.param.read_params">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sigame.param.</span></span><span class="sig-name descname"><span class="pre">read_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params_file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.param.read_params" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Read parameters and save as object</p>
+<dd><p>Read parameters and save as object</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="sigame.param.read_params.Herschel_limits">
 <span class="sig-name descname"><span class="pre">Herschel_limits</span></span><a class="headerlink" href="#sigame.param.read_params.Herschel_limits" title="Permalink to this definition">¶</a></dt>

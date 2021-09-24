@@ -13,7 +13,7 @@ sigame.galaxy submodule
     :members:
     :private-members:
     :undoc-members:
-    
+
 
 sigame.global\_results submodule
 --------------------------------
@@ -22,7 +22,6 @@ sigame.global\_results submodule
     :members:
     :private-members:
     :undoc-members:
-    :show-inheritance:
 
 
 sigame.Cloudy_modeling submodule
@@ -32,7 +31,6 @@ sigame.Cloudy_modeling submodule
     :members:
     :private-members:
     :undoc-members:
-    :show-inheritance:
 
 sigame.main submodule
 ----------------------
@@ -41,7 +39,6 @@ sigame.main submodule
     :members:
     :private-members:
     :undoc-members:
-    :show-inheritance:
 
 sigame.backend submodule
 ----------------------
@@ -50,7 +47,6 @@ sigame.backend submodule
     :members:
     :private-members:
     :undoc-members:
-    :show-inheritance:
 
 sigame.plot submodule
 ---------------------
@@ -59,7 +55,6 @@ sigame.plot submodule
     :members:
     :private-members:
     :undoc-members:
-    :show-inheritance:
 
 sigame.param submodule
 ----------------------
@@ -68,7 +63,6 @@ sigame.param submodule
     :members:
     :private-members:
     :undoc-members:
-    :show-inheritance:
 
 
 sigame.auxil submodule
@@ -78,4 +72,3 @@ sigame.auxil submodule
     :members:
     :private-members:
     :undoc-members:
-    :show-inheritance:
