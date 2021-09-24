@@ -159,7 +159,7 @@ and carry out all tasks related to galaxies.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.galaxy.galaxy.add_attr">
 <span class="sig-name descname"><span class="pre">add_attr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attr_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.galaxy.add_attr" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates desired attribute and adds it to galaxy object</p>
+<dd><p>Adds either particle data or cell data as attribute to a galaxy object</p>
 </dd></dl>
 
 </dd></dl>
@@ -167,45 +167,49 @@ and carry out all tasks related to galaxies.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="sigame.galaxy.particle_data">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sigame.galaxy.</span></span><span class="sig-name descname"><span class="pre">particle_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gal_ob</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.particle_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>An object referring to the particle data (sim or ISM)</p>
+<dd><p>An object referring to the particle data for one galaxy (gas or stars)</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Must be added as an attribute to a galaxy object.</p>
 </div>
-<dl class="simple">
-<dt>gal_ob<span class="classifier">object</span></dt><dd><p>Instance of galaxy class.</p>
-</dd>
-<dt>silent<span class="classifier">bool</span></dt><dd><p>Parameter telling the code to do (or not) print statements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gal_ob</strong> (<em>object</em>) – Instance of galaxy class</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Print a lot of info (True) or less (False) during run time of the code</p></li>
+</ul>
 </dd>
 </dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">galaxy</span> <span class="k">as</span> <span class="nn">gal</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">gal_ob</span> <span class="o">=</span> <span class="n">gal</span><span class="o">.</span><span class="n">galaxy</span><span class="p">(</span><span class="n">gal_index</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">simgas</span> <span class="o">=</span> <span class="n">gal_ob</span><span class="o">.</span><span class="n">particle_data</span><span class="o">.</span><span class="n">get_dataframe</span><span class="p">(</span><span class="s1">&#39;sim&#39;</span><span class="p">)[</span><span class="s1">&#39;gas&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">simgas</span> <span class="o">=</span> <span class="n">gal_ob</span><span class="o">.</span><span class="n">particle_data</span><span class="o">.</span><span class="n">get_dataframe</span><span class="p">(</span><span class="s1">&#39;simgas&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">simstar</span> <span class="o">=</span> <span class="n">gal_ob</span><span class="o">.</span><span class="n">particle_data</span><span class="o">.</span><span class="n">get_dataframe</span><span class="p">(</span><span class="s1">&#39;simstar&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.galaxy.particle_data._add_data">
 <span class="sig-name descname"><span class="pre">_add_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.particle_data._add_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add particle data as dataframe (“df” attribute) to particle_data object.</p>
+<dd><p>Adds particle data as dataframe (“df” attribute) to particle_data object.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.galaxy.particle_data.get_dataframe">
 <span class="sig-name descname"><span class="pre">get_dataframe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.particle_data.get_dataframe" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return dataframe with particle data for particle_data object.</p>
+<dd><p>Returns dataframe with particle data for one galaxy.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.galaxy.particle_data.save_dataframe">
 <span class="sig-name descname"><span class="pre">save_dataframe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.particle_data.save_dataframe" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Saves particle data as dataframe to file.</p>
+</dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sigame.galaxy.cell_data">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sigame.galaxy.</span></span><span class="sig-name descname"><span class="pre">cell_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gal_ob</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.cell_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>An object referring to the cell data of one galaxy</p>
+<dd><p>An object referring to the gas in cell data format for one galaxy</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Is an attribute to a galaxy object.</p>
@@ -330,19 +334,25 @@ Called by self._do_interpolation_cells().</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="sigame.galaxy.setup_SKIRT">
 <span class="sig-prename descclassname"><span class="pre">sigame.galaxy.</span></span><span class="sig-name descname"><span class="pre">setup_SKIRT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gal_indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.setup_SKIRT" title="Permalink to this definition">¶</a></dt>
-<dd><p>A function that creates SKIRT input, using isrf classs.</p>
+<dd><p>A function that creates SKIRT input, using input from isrf classs.
+Called by backend.py.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>gal_indices</strong> (<em>list</em>) – List of galaxy indices to loop over.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sigame.galaxy.read_SKIRT">
 <span class="sig-prename descclassname"><span class="pre">sigame.galaxy.</span></span><span class="sig-name descname"><span class="pre">read_SKIRT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gal_index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.read_SKIRT" title="Permalink to this definition">¶</a></dt>
-<dd><p>A function that reads SKIRT output, using isrf classs.</p>
+<dd><p>Reads SKIRT output, using isrf classs.</p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sigame.galaxy.isrf">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sigame.galaxy.</span></span><span class="sig-name descname"><span class="pre">isrf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gal_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">GR</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.isrf" title="Permalink to this definition">¶</a></dt>
-<dd><p>An object that will derive and store the ISRF information for one galaxy.
+<dd><p>An class to handle all tasks related to the interstellar radiation field (ISRF) for one galaxy.
 Child class that inherits from parent class ‘galaxy’.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.galaxy.isrf.setup_tasks">
@@ -353,9 +363,10 @@ Child class that inherits from parent class ‘galaxy’.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.galaxy.isrf._get_name">
 <span class="sig-name descname"><span class="pre">_get_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.isrf._get_name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get galaxy identifier used when running SKIRT</p>
-<dl class="simple">
-<dt>method<span class="classifier">str</span></dt><dd><p>Optional string to identify specific SKIRT runs.</p>
+<dd><p>Gets galaxy identifier used when running SKIRT</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>method</strong> (<em>str</em><em>, </em><em>optional</em>) – String to identify specific SKIRT runs.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -363,37 +374,32 @@ Child class that inherits from parent class ‘galaxy’.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.galaxy.isrf._set_distance_to_galaxy">
 <span class="sig-name descname"><span class="pre">_set_distance_to_galaxy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.isrf._set_distance_to_galaxy" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set distance to galaxy in Mpc (defaults to 10 Mpc for z = 0).</p>
+<dd><p>Sets distance to galaxy in Mpc (defaults to 10 Mpc for z = 0).</p>
 </dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="sigame.galaxy.isrf.check_for_skirt_output">
-<span class="sig-name descname"><span class="pre">check_for_skirt_output</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.isrf.check_for_skirt_output" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.galaxy.isrf.read_skirt_output">
 <span class="sig-name descname"><span class="pre">read_skirt_output</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.isrf.read_skirt_output" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate and save galaxy integrated luminosities from SKIRT output files 
-(SED instrument), and save SKIRT grid for further use in SIGAME.</p>
+<dd><p>Reads and saves galaxy integrated luminosities from SKIRT output files 
+(SED instrument), and saves SKIRT grid for further use in SIGAME.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.galaxy.isrf._add_bol_lum">
 <span class="sig-name descname"><span class="pre">_add_bol_lum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.isrf._add_bol_lum" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate emitted bolometric luminosity from SKIRT output files (SED instrument).</p>
+<dd><p>Calculates total emitted bolometric luminosity of galaxy from SKIRT output files (SED instrument).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.galaxy.isrf._add_FUV_lum">
 <span class="sig-name descname"><span class="pre">_add_FUV_lum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.isrf._add_FUV_lum" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate emitted FUV luminosity from SKIRT output files (SED instrument).</p>
+<dd><p>Calculates total emitted FUV luminosity of galaxy from SKIRT output files (SED instrument).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.galaxy.isrf._add_TIR_lum">
 <span class="sig-name descname"><span class="pre">_add_TIR_lum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.isrf._add_TIR_lum" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate emitted total TIR (3-1100 microns) luminosity from SKIRT output files (SED instrument).
+<dd><p>Calculates total emitted TIR (3-1100 microns) luminosity of galaxy from SKIRT output files (SED instrument).
 TIR as defined in Kennicutt and Evans 2012 table 1:</p>
 <blockquote>
 <div><p><a class="reference external" href="https://www.annualreviews.org/doi/abs/10.1146/annurev-astro-081811-125610">https://www.annualreviews.org/doi/abs/10.1146/annurev-astro-081811-125610</a></p>
@@ -403,23 +409,20 @@ TIR as defined in Kennicutt and Evans 2012 table 1:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.galaxy.isrf._add_FIR_lum">
 <span class="sig-name descname"><span class="pre">_add_FIR_lum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.isrf._add_FIR_lum" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate emitted total FIR (3-1100 microns) luminosity from SKIRT output files (SED instrument).
-FIR as defined in Kennicutt and Evans 2012 table 1:</p>
-<blockquote>
-<div><p><a class="reference external" href="https://www.annualreviews.org/doi/abs/10.1146/annurev-astro-081811-125610">https://www.annualreviews.org/doi/abs/10.1146/annurev-astro-081811-125610</a></p>
-</div></blockquote>
+<dd><p>Calculates total emitted FIR (40-500 microns)
+FIR defined as: <a class="reference external" href="https://ned.ipac.caltech.edu/level5/Sanders/Sanders2.html">https://ned.ipac.caltech.edu/level5/Sanders/Sanders2.html</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.galaxy.isrf._read_SED">
 <span class="sig-name descname"><span class="pre">_read_SED</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fluxOutputStyle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Wavelength'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">select</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.isrf._read_SED" title="Permalink to this definition">¶</a></dt>
-<dd><p>Read SED output from SKIRT.</p>
-<dl class="simple">
-<dt>fluxOutputStyle: str</dt><dd><p>Units for flux, default is “Wavelength”: Units are F_mu (W/m2/micron)
-Alternatively, “Neutral”: Units are lambda*F_lambda (W/m2)
-Alternatively, “Frequency”: Units are F_lambda (W/m2/Hz)</p>
-</dd>
-<dt>select: str</dt><dd><p>Optional string to identify specific SKIRT runs, for instance with increased photon package number.</p>
+<dd><p>Reads SED output from SKIRT.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fluxOutputStyle</strong> (<em>str</em><em>, </em><em>optional</em>) – Units of flux in each cell, defaults to “Wavelength” corresponding to (W/m2/micron)</p></li>
+<li><p><strong>method</strong> (<em>str</em><em>, </em><em>optional</em>) – String to identify specific SKIRT runs, for instance with increased photon package number.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -427,13 +430,23 @@ Alternatively, “Frequency”: Units are F_lambda (W/m2/Hz)</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.galaxy.isrf._get_cut_probe">
 <span class="sig-name descname"><span class="pre">_get_cut_probe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.isrf._get_cut_probe" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get cross section data of radiation field from SKIRT.</p>
+<dd><p>Gets cross section data through galaxy of radiation field from SKIRT for visualization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>orientation</strong> (<em>str</em><em>, </em><em>optional</em>) – From which angle to view the galaxy, either ‘face-on’,’xy’,’yx’,’edge-on’,’xz’,’zx’,’yz’ or ‘zy’, defaults to ‘face-on’.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.galaxy.isrf._get_map_inst">
 <span class="sig-name descname"><span class="pre">_get_map_inst</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.isrf._get_map_inst" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get projected map of radiation field from SKIRT.</p>
+<dd><p>Gets projected map of radiation field from SKIRT for visualization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>orientation</strong> (<em>str</em><em>, </em><em>optional</em>) – From which angle to view the galaxy, either ‘face-on’,’xy’,’yx’,’edge-on’,’xz’,’zx’,’yz’ or ‘zy’, defaults to ‘face-on’.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -441,14 +454,19 @@ Alternatively, “Frequency”: Units are F_lambda (W/m2/Hz)</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="sigame.galaxy.run_grid">
 <span class="sig-prename descclassname"><span class="pre">sigame.galaxy.</span></span><span class="sig-name descname"><span class="pre">run_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gal_index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.run_grid" title="Permalink to this definition">¶</a></dt>
-<dd><p>A function that puts galaxy properties on a grid structure, using 
-grid class.</p>
+<dd><p>A function that puts gas properties on a grid structure, using grid class.
+Called by backend.py.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>gal_index</strong> (<em>int</em>) – Index of galaxy to process.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="sigame.galaxy.grid">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sigame.galaxy.</span></span><span class="sig-name descname"><span class="pre">grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gal_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">GR</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.grid" title="Permalink to this definition">¶</a></dt>
-<dd><p>An object that will derive and store the cell information for one galaxy.
+<dd><p>An class to handle all tasks related to deriving and storing the cell information for one galaxy.
 Child class that inherits from parent class ‘galaxy’.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.galaxy.grid.setup_tasks">
@@ -459,7 +477,7 @@ Child class that inherits from parent class ‘galaxy’.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.galaxy.grid.run">
 <span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.grid.run" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert particle properties to cell grid</p>
+<dd><p>Converts particle properties to cell grid.</p>
 </dd></dl>
 
 </dd></dl>
@@ -468,7 +486,8 @@ Child class that inherits from parent class ‘galaxy’.</p>
 <dt class="sig sig-object py" id="sigame.galaxy.run_interp">
 <span class="sig-prename descclassname"><span class="pre">sigame.galaxy.</span></span><span class="sig-name descname"><span class="pre">run_interp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gal_index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.run_interp" title="Permalink to this definition">¶</a></dt>
 <dd><p>A function that interpolates Cloudy look-up tables for 
-line luminosity and other properties, using interpolation class.</p>
+line luminosity and other properties for one galaxy at a time, using interpolation class.
+Called by backend.py.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -480,7 +499,7 @@ line luminosity and other properties, using interpolation class.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="sigame.galaxy.interpolation">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sigame.galaxy.</span></span><span class="sig-name descname"><span class="pre">interpolation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gal_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">GR</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.interpolation" title="Permalink to this definition">¶</a></dt>
-<dd><p>An object that will interpolate in cloudy look-up tables for the line luminosities.
+<dd><p>An class to handle all tasks related to interpolating in the Cloudy look-up table for one galaxy.
 Child class that inherits from parent class ‘galaxy’.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.galaxy.interpolation.setup_tasks">
@@ -491,7 +510,8 @@ Child class that inherits from parent class ‘galaxy’.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="sigame.galaxy.interpolation.run_cells">
 <span class="sig-name descname"><span class="pre">run_cells</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sigame.galaxy.interpolation.run_cells" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Executes interpolation task for gas cells in one galaxy.</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -726,6 +746,11 @@ scripts to read the output.</p>
 <dd><p>Creates input scripts for SKIRT to calculate the 
 interstellar radiation field (ISRF), 
 attenuated by dust via radiative transfer (RT).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>GR</strong> – global results object that contains general info for this galaxy sample/</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
@@ -733,13 +758,23 @@ attenuated by dust via radiative transfer (RT).</p>
 <span class="sig-prename descclassname"><span class="pre">sigame.backend.</span></span><span class="sig-name descname"><span class="pre">read_SKIRT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">GR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.backend.read_SKIRT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read output from SKIRT and create 
 new galaxy object based on SKIRT output grid</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>GR</strong> – global results object that contains general info for this galaxy sample/</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sigame.backend.grid_gas">
 <span class="sig-prename descclassname"><span class="pre">sigame.backend.</span></span><span class="sig-name descname"><span class="pre">grid_gas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">GR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigame.backend.grid_gas" title="Permalink to this definition">¶</a></dt>
-<dd><p>Performs re-gridding of gas particle properties on the AMR 
+<dd><p>Performs re-gridding of gas particle properties on the 
 cell grid structure provided by SKIRT.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>GR</strong> – global results object that contains general info for this galaxy sample/</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
